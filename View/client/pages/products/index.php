@@ -3,16 +3,24 @@
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 ?>
-    <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ms-auto">
-        <a class="navbar-brand ml-3" href="#">Browser</a>
-        <a class="navbar-brand" href="#">News</a>
-        <a class="navbar-brand" href="#">Books1</a>
-    </nav>
+
+<div class="container-fluid">
+    <div class="container header">
+        <div class="row">
+            <div class="input-group mt-5">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
-include('../../layouts/default.php'); // Thực hiện thừa kế
+$htmlFilePath = CLIENT_PATH . 'layouts/default.php';
+
+include $htmlFilePath; // Thực hiện thừa kế
 ?>

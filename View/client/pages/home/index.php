@@ -8,5 +8,6 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
+
 include('../../layouts/default.php'); // Thực hiện thừa kế
 ?>
