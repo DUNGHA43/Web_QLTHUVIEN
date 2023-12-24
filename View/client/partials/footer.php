@@ -1,10 +1,7 @@
 <footer class="text-black">
-    <div class="contaienr-fluid pt-5 ">
-        <div class="row bg-light">
+    <div class="contaienr-fluid bg-light">
+        <div class="row pt-5 pb-5 justify-content-center">
             <div class="col-md-2">
-                <h1 class="font-weight-bold mt-5 pt-2">
-                    Nike
-                </h1>
             </div>
 
             <div class="col-md-3">
@@ -43,10 +40,13 @@
             </div>
 
             <div class="col-md-1">
-                <img src="public/image/lofi.jpg" width="80px" alt="">
             </div>
         </div>
 
-
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                Copyright @2023
+            </div>
+        </div>
     </div>
 </footer>
