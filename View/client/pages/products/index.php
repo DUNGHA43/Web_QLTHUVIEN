@@ -1,4 +1,6 @@
 <?php
+    $dataFile = MODEL_PATH . 'hienthi.php';
+    include $dataFile;
 // Thừa kế file layout.php
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
@@ -15,10 +17,6 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             </div>
         </div>
     </div>
-    <?php 
-            $i = 0;
-            while($i < 2){        
-        ?>
     <div class="container my-3">
         <div class="row">
             <div class="col-12">
@@ -28,23 +26,21 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
         
         <div class="row">
             <?php 
-                $j = 0;
-                while($j < 10){        
+                while($rows = mysqli_fetch_array($result)){        
             ?>
             <div class="col-3" style="padding-top: 20px;">
                 <div class="card" style="width: 18rem;">
-                    <img src="public/image/lofi.jpg" class="card-img-top" alt="...">
+                    <img src="public/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
+                        <p class="card-text"><?php echo $rows['moTa'] ?></p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
-            <?php $j++; } ?>
+            <?php } ?>
         </div>
     </div>
-    <?php $i++; } ?>
 </div>
 
 <?php
