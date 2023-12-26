@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <base href="http://localhost/Web_QLTHUVIEN/Controller/">;
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container justify-content-center align-items-center">
         <div class="row">
             <div class="col-6 offset-md-3">
-                <form action="" id="form_red" class="bg-light p-4 my-3" method="port">
+                <form action="account_Controller.php" id="form_red" class="bg-light p-4 my-3" method="post">
                     <h2 class="py-3 text-center text-uppercase">Đăng kí tài khoản</h2>
                     <div class="form-group">
                         <label for="fullname">Họ và tên</label>
@@ -45,7 +46,7 @@
                         <label for="address">Địa chỉ</label>
                         <input type="text" name="address" class="form-control" id="address">
                     </div>
-                    <input type="submit" class="btn btn-primary btn-block mt-4" name="btn=reg" value="Đăng ký">
+                    <input type="submit" class="btn btn-primary btn-block mt-4" name="btn-reg" value="Đăng ký">
                 </form>
             </div>
         </div>
