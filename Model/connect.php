@@ -1,17 +1,18 @@
 <?php
-        $sever = 'localhost';
-        $user = 'root';
-        $pass = '';
-        $database = 'web_qlthuvien';
-        global $conn;
-        $conn = new mysqli($sever, $user, $pass, $database);
-    
-        if($conn)
+
+        function connectSQL()
         {
-            mysqli_query($conn , "SET NAMES 'utf8'");
-        }
-        else
-        {
-            echo 'Kết nối không thành công! <br>';
+            $sever = 'localhost';
+            $user = 'root';
+            $pass = '';
+            $database = 'web_qlthuvien';
+            global $conn;
+            $conn = new mysqli($sever, $user, $pass, $database);
+            if (!$conn)
+            {
+                die("Kết nối thất bại: " . mysqli_connect_error());
+            }
+            mysqli_set_charset($conn, "utf8mb4");
+            return $conn;
         }
 ?>
