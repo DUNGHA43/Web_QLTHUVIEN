@@ -3,7 +3,7 @@
         $user = 'root';
         $pass = '';
         $database = 'web_qlthuvien';
-    
+        global $conn;
         $conn = new mysqli($sever, $user, $pass, $database);
     
         if($conn)

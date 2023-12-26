@@ -1,8 +1,8 @@
 <?php 
     include '../Model/account_Model.php';
+    include "../Model/connect.php";
     if(isset($_POST['btn-reg'])){
         echo "<pre>";
-        print_r($_POST);
         $taiKhoan = $_POST['username'];
         $matKhau = $_POST['password'];
         $maSV = '';
@@ -13,7 +13,8 @@
         $email = $_POST['email'];
         $diaChi = $_POST['address']; 
         $maquyen = '2';
+        $gioiTinh = $_POST['gender'];
 
-        addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email, $diaChi, $maquyen);
+        addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email, $diaChi, $maquyen, $gioiTinh, $conn);
     }
 ?>
