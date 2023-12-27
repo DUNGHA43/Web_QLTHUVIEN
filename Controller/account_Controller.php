@@ -14,7 +14,8 @@
         $maquyen = '2';
         $gioiTinh = $_POST['gender'];
 
-        addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email, $diaChi, $maquyen, $gioiTinh);
+        addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email,$gioiTinh, $diaChi, $maquyen);
     }
-    header("location: ./index.php");
+    header("location: http://localhost/Web_QLTHUVIEN/index.php")
 ?>
+
