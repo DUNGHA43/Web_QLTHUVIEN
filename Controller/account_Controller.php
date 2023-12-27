@@ -16,5 +16,5 @@
 
         addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email, $diaChi, $maquyen, $gioiTinh);
     }
-    header("location: index.php");
+    header("location: ./index.php");
 ?>
