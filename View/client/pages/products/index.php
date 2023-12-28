@@ -26,7 +26,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
         
         <div class="row">
             <?php 
-                while($rows = mysqli_fetch_array($result)){        
+                while($rows = $result->fetch_assoc()){        
             ?>
             <div class="col-3" style="padding-top: 20px;">
                 <div class="card" style="width: 18rem;">
