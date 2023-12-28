@@ -3,7 +3,7 @@
     $pageTitle = "Page Title";
     ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 ?> 
-<a href="">adsf</a>
+<a href="">toi ten la Hoang</a>
 <?php
     $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
