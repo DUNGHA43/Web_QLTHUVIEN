@@ -30,7 +30,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             ?>
             <div class="col-3" style="padding-top: 20px;">
                 <div class="card" style="width: 18rem;">
-                    <img src="public/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="...">
+                    <img src="public/client/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
                         <p class="card-text"><?php echo $rows['moTa'] ?></p>

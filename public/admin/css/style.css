@@ -1,0 +1,50 @@
+.header{
+    background: #202020;
+    padding: 10px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .inner-logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+/* End-Header */
+
+/* body  */
+.body .slider{
+    width: 150px;
+    background: #323232;
+    color: #fff;
+    height: calc(100vh - 56px);
+    position: fixed; 
+    top: 56px;
+    left: 0;
+}
+
+.body .main{
+    margin: 15px;
+    position: relative;
+    left: 150px;
+    width: calc((100% - 180px));
+}
+/* end-body */
+
+/* slider */
+.slider .inner-menu ul {
+    list-style: none;
+    
+    padding: 0;
+    margin: 0;
+}
+
+.slider .inner-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    list-style: none;
+    display: block;
+    padding: 6px 12px;
+    border-bottom: 1px solid #515151;
+}
