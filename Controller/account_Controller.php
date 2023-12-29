@@ -2,6 +2,8 @@
     include '../Model/account_Model.php';
     session_start();
     ob_start();
+    
+
     if(isset($_POST['btn-login']) && ($_POST['btn-login'])){
         echo "<pre>";
         $taiKhoan = $_POST['username'];
@@ -11,7 +13,7 @@
         if($role == "1"){
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
         }else if($role == "2"){
-            header("location: http://localhost/Web_QLTHUVIEN/admin.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php");
         }else {
             header("location: http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangnhap.php");   
         }
@@ -34,6 +36,18 @@
 
         addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email,$gioiTinh, $diaChi, $anhTaiKhoan,$maquyen);
         echo "OK";
+    }
+    
+    include '../View/admin/partials/slider.php';
+    if(isset($_GET['act'])){
+        echo $_GET['act'];
+
+        switch($_GET['act']){
+            case 'thoat':
+                if(isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
+                header("location: http://localhost/Web_QLTHUVIEN/index.php");
+                break;
+        }      
     }
 ?>
 
