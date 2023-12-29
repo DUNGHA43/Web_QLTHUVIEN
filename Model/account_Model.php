@@ -15,10 +15,10 @@
         return $check;
     }
 
-    function addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $maquyen){
+    function addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan,$maquyen){
         $conn = connectSQL();
         $sql = "INSERT INTO tbltaikhoan VALUES ('$taiKhoan', '$matKhau', '$maSV', '$hoTen', '$ngaySinh',
-                                                                '$soCCCD','$soDT', '$email', '$gioiTinh', '$diaChi', '$maquyen')";
+                                                                '$soCCCD','$soDT', '$email', '$gioiTinh', '$diaChi', '$anhTaiKhoan','$maquyen')";
         mysqli_query($conn,$sql);
         $conn = null;
     }

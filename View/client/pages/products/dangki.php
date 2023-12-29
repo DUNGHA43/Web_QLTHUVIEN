@@ -37,7 +37,7 @@
                                 <label for="male" class="form-check-label">Nam</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" name="gender" checked id="male" value="female">
+                                <input type="radio" class="form-check-input" name="gender" checked id="female" value="female">
                                 <label for="female" class="form-check-label">Nữ</label>
                             </div>
                         </div>
