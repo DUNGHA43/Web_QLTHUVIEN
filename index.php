@@ -7,6 +7,6 @@ $htmlFilePath = CLIENT_PATH . 'pages/products/index.php';
 $dashboard_admin_path = ADMIN_PATH . "pages/dashboard/index.php";
 include $htmlFilePath;
 //include $dashboard_admin_path;
- include $htmlFilePath;
+//  include $htmlFilePath;
 ?>
 
