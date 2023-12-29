@@ -1,6 +1,6 @@
 <?php 
     include '../Model/account_Model.php';
-    if(isset($_POST['btn-reg'])){
+    if(isset($_POST['btn-login'])){
         echo "<pre>";
         $taiKhoan = $_POST['username'];
         $matKhau = $_POST['password'];
@@ -13,9 +13,10 @@
         $diaChi = $_POST['address']; 
         $maquyen = '2';
         $gioiTinh = $_POST['gender'];
-
-        addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email,$gioiTinh, $diaChi, $maquyen);
+        if(checkUser($taiKhoan, $matKhau)){
+            header("location: http://localhost/Web_QLTHUVIEN/admin.php");
+        }
+        //addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email,$gioiTinh, $diaChi, $maquyen);
     }
-    header("location: http://localhost/Web_QLTHUVIEN/index.php")
 ?>
 
