@@ -17,20 +17,18 @@
       <img src="public/client/image/'.$_SESSION['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
       <div class="dropdown-menu">
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
+        <a class="navbar-brand dropdown-item" href="#">Thông tin cá nhân</a>
+        <a class="navbar-brand dropdown-item" href="#">abcxyz</a>
+        <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     } else {
     ?>
-      <span class= "mr-2 d-none d-lg-inline text-gray-600 small"><?php $_SESSION['hoTen'] ?></span>
       <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangki.php">Đăng ký</a>
       <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangnhap.php">Đăng nhập</a>
     <?php } ?>
   </form>
 </nav>
-<a href=""></a>
 <style>
   .form-infor {
     padding-left: 10px;
@@ -48,16 +46,13 @@
   .img-profile {
     width: 30px;
     height: 30px;
+    margin-left: 7px;
+    margin-right: 7px;
   }
 
   .buttonDropdown {
     background-color: cornflowerblue;
     margin-right: 10px;
-    width: 180px;
-    /* width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 70px; */
   }
 
 
