@@ -3,10 +3,13 @@
     ob_start();
     include '../Model/connect.php';
     include '../Model/account_Model.php';
+
     if(isset($_POST['btn-login']) && ($_POST['btn-login'])){
         $taiKhoan = $_POST['username'];
         $matKhau = $_POST['password'];
         $kq = checkUser($taiKhoan, $matKhau);
+        $rows = mysqli_fetch_array(getUserInfo($taiKhoan, $matKhau));
+
         $role = $kq[0]['maQuyen'];
         if($role == "1"){
             $_SESSION["maquyen"] = $role;
@@ -14,6 +17,7 @@
         }else if($role == "2"){
             $_SESSION['maquyen'] = $role;
             $_SESSION['hoTen'] = $kq[0]['hoTen'];
+            $_SESSION['img'] = $rows['anhTaiKhoan'];
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
         }else {
             
@@ -49,6 +53,7 @@
             case 'thoat':
                 if(isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
                 if(isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);
+                if(isset($_SESSION['img'])) unset($_SESSION['img']);
                 header("location: http://localhost/Web_QLTHUVIEN/index.php");
                 break;
         }      

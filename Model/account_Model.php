@@ -20,4 +20,12 @@
         mysqli_query($conn,$sql);
         $conn = null;
     }
+
+    function getUserInfo($taiKhoan, $matKhau)
+    {
+        $conn = connectSQL();
+        $sql = "SELECT * FROM tbltaikhoan WHERE taiKhoan = '$taiKhoan' && matKhau = '$matKhau'"; 
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
 ?>

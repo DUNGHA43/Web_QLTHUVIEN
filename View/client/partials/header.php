@@ -7,8 +7,11 @@
   </form>
   <form class="form-inline">
   
-    <?php if(isset($_SESSION['hoTen'])&& ($_SESSION['hoTen']!="")) {
-          echo '<a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=userinfo">'.$_SESSION['hoTen'].'</a> 
+    <?php if(isset($_SESSION['hoTen']) && isset($_SESSION['img']) && ($_SESSION['hoTen']!="")) {
+          echo '<a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=userinfo">'.'
+                  <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'.  $_SESSION['hoTen'] .'</span>' . '
+                  <img src="public/client/image/'.$_SESSION['img'].'" alt="" class="img-profile rounded-circle""> ' .
+               ' </a> 
                     <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Thoat</a>';
     }else {
      ?>
@@ -32,5 +35,9 @@
     
 }
 
+.img-profile{
+  width: 45px;
+  height: 45px;
+}
 
 </style>
