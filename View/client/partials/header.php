@@ -3,7 +3,14 @@
     <a class="navbar-brand a" href="http://localhost/Web_QLTHUVIEN/index.php">Trang chủ</span></a>
     <a class="navbar-brand">Về chúng tôi</a>
     <a class="navbar-brand">Mượn sách</a>
-
+    <?php if(isset($_COOKIE['hoTen']))
+    {
+      echo $_COOKIE['hoTen'];
+    }else
+    {
+      echo "ko có";
+    }
+     ?>
   </form>
   <form class="form-inline">
     <!-- Example split danger button -->
@@ -22,7 +29,21 @@
         <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
-    } else {
+    }
+    else if(isset($_COOKIE['hoTen']) && isset($_COOKIE['img']) && ($_COOKIE['hoTen'] != "")){
+      echo '<div class="dropdown ">
+      <button class="btn btn-secondary dropdown-toggle buttonDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
+      <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'. $_COOKIE['hoTen'] . '</span>
+      <img src="public/client/image/'.$_COOKIE['img'].'" alt="" class="img-profile rounded-circle"">
+      </button>
+      <div class="dropdown-menu">
+        <a class="navbar-brand dropdown-item" href="#">Thông tin cá nhân</a>
+        <a class="navbar-brand dropdown-item" href="#">abcxyz</a>
+        <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
+      </div> 
+    </div>';
+    } 
+    else {
     ?>
       <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangki.php">Đăng ký</a>
       <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangnhap.php">Đăng nhập</a>

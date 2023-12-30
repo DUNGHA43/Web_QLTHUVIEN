@@ -13,11 +13,21 @@
         $role = $kq[0]['maQuyen'];
         if($role == "1"){
             $_SESSION["maquyen"] = $role;
+            if(isset($_POST['checksave']))
+            {
+                setcookie("maquyen", $role, time()+(86400*7), "/");
+            }
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
         }else if($role == "2"){
             $_SESSION['maquyen'] = $role;
             $_SESSION['hoTen'] = $kq[0]['hoTen'];
             $_SESSION['img'] = $rows['anhTaiKhoan'];
+            if(isset($_POST['checksave']))
+            {
+                setcookie("maquyen", $role, time()+(86400*7), "/");
+                setcookie("hoTen", $kq[0]['hoTen'], time()+(86400*7), "/");
+                setcookie("img", $rows['anhTaiKhoan'], time()+(86400*7), "/");
+            }
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
         }else {
             
@@ -54,6 +64,9 @@
                 if(isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
                 if(isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);
                 if(isset($_SESSION['img'])) unset($_SESSION['img']);
+                setcookie("maquyen", "", time()+(86400*7), "/");
+                setcookie("hoTen", "", time()+(86400*7), "/");
+                setcookie("img", "", time()+(86400*7), "/");
                 header("location: http://localhost/Web_QLTHUVIEN/index.php");
                 break;
         }      

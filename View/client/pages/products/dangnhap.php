@@ -11,7 +11,7 @@
 <div class="container justify-content-center align-items-center">
         <div class="row">
             <div class="col-6 offset-md-3 ">
-                <form action="account_Controller.php" id="form_red" class="bg-light p-4 my-3" method="post">
+                <form action="account_Controller.php <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form_red" class="bg-light p-4 my-3" method="post">
                     <h2 class="py-3 text-center text-uppercase">Đăng nhập</h2>
                     <div class="form-group">
                         <label for="username">Tên đăng nhập</label>
@@ -20,6 +20,12 @@
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
                         <input type="password" name="password" class="form-control" id="password">
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="checksave" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Lưu tài khoản
+                    </label>
                     </div>
 
                     <input type="submit" class="btn btn-primary btn-block mt-4" name="btn-login" value="Đăng nhập">
