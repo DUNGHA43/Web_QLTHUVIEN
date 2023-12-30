@@ -1,5 +1,5 @@
 <?php
-    $dataFile = MODEL_PATH . 'hienthi.php';
+    $dataFile = MODEL_PATH . 'show_Documents.php';
     include $dataFile;
 // Thừa kế file layout.php
 $pageTitle = "Page Title";
@@ -20,13 +20,13 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
     <div class="container my-3">
         <div class="row">
             <div class="col-12">
-                <h1>Ranking board</h1>
+                <h1>Tài liệu mới</h1>
             </div>
         </div>
-        
         <div class="row">
             <?php 
-                while($rows = $result->fetch_assoc()){        
+                $dcmNew = show_List_DCMs_New();
+                while($rows = $dcmNew->fetch_assoc()){        
             ?>
             <div class="col-3" style="padding-top: 20px;">
                 <div class="card" style="width: 18rem;">
@@ -38,7 +38,38 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php } 
+        ?>
+        </div>
+    </div>
+    <?php 
+        $cGR = showCGR();
+        while($rowsCGR = $cGR->fetch_assoc())
+        {
+    ?>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-12">
+                <h1>Thể loại <?php echo $rowsCGR['tenTL'] ?></h1>
+            </div>
+        </div>
+        <div class="row">
+            <?php 
+                $dcmByCGR = showDCM_BY_CGR($rowsCGR['maTL']);
+                while($rowsDCM = $dcmByCGR->fetch_assoc()){        
+            ?>
+            <div class="col-3" style="padding-top: 20px;">
+                <div class="card" style="width: 18rem;">
+                    <img src="public/client/image/<?php echo $rowsDCM['hinhAnh'] ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu'] ?></h5>
+                        <p class="card-text"><?php echo $rowsDCM['moTa'] ?></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <?php } 
+        }?>
         </div>
     </div>
 </div>
