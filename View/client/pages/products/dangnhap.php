@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        <input type="text" name="password" class="form-control" id="password">
+                        <input type="password" name="password" class="form-control" id="password">
                     </div>
 
                     <input type="submit" class="btn btn-primary btn-block mt-4" name="btn-login" value="Đăng nhập">
