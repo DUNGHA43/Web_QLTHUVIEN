@@ -8,8 +8,8 @@
   <form class="form-inline">
   
     <?php if(isset($_SESSION['hoTen'])&& ($_SESSION['hoTen']!="")) {
-          echo '<li><a href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=userinfo">'.$_SESSION['hoTen'].'</a> 
-                    <a href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Thoat</a></li>';
+          echo '<a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=userinfo">'.$_SESSION['hoTen'].'</a> 
+                    <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Thoat</a>';
     }else {
      ?>
     <a class="navbar-brand" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangki.php">Đăng ký</a>
