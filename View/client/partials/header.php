@@ -17,9 +17,9 @@
       </button>
       <div class="dropdown-menu">
         
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
+        <button class="dropdown-item dropItem" type="button">Action</button>
+        <button class="dropdown-item dropItem" type="button">Another action</button>
+        <button class="dropdown-item dropItem" type="button">Something else here</button>
       </div> 
     </div>';
     } else {
@@ -56,8 +56,10 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    margin-right: 70px;
+    margin-right: 150px;
   }
-
+  .dropItem {
+    margin-right: 10px;
+  }
 
 </style>
