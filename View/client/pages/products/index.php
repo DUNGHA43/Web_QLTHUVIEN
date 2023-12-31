@@ -33,7 +33,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                     <img src="public/client/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
-                        <p class="card-text"><?php echo $rows['moTa'] ?></p>
+                        <p class="card-text" style="text-align: justify;"><?php echo $rows['moTa'] ?></p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
