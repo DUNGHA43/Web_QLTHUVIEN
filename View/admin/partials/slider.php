@@ -3,10 +3,10 @@
     <div class="inner-menu" >
         <ul>
             <li>
-                <a href="#">Dashboard</a>
+                <a href="#">Trang chủ</a>
             </li>
             <li>
-                <a href="#">Products</a>
+                <a href="#">Tác giả</a>
             </li>
             <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>

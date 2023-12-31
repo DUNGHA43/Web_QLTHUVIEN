@@ -1,6 +1,5 @@
 <?php 
 
-    //include "../Model/connect.php";
 
     function checkUser($user, $pass){
         $conn = connectSQLPDO();
