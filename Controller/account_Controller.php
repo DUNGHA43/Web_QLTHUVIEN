@@ -50,7 +50,6 @@
         $maquyen = '2';
 
         addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD,$soDT, $email,$gioiTinh, $diaChi, $anhTaiKhoan,$maquyen);
-        echo "OK";
     }
     include '../View/client/partials/header.php';
     include '../View/admin/partials/slider.php';

@@ -1,6 +1,4 @@
 <?php 
-
-
     function checkUser($user, $pass){
         $conn = connectSQLPDO();
         $stmt = $conn->prepare("SELECT * FROM tbltaikhoan WHERE taiKhoan = '".$user."' and matKhau = '".$pass."'");

@@ -2,6 +2,7 @@
 // Thừa kế file layout.php
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
+include "../Web_QLTHUVIEN/Model/Author_Model.php";
 ?>
 <h1><span class="badge badge-secondary mb-5">Sửa tên ở đây nè!</span></h1>
 <div class="container-fluid mb-5">
@@ -44,85 +45,113 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 <table class="table table-hover table-sm text-center" checkboxMulti>
     <thead>
         <tr>
-            <th>
-                <input type="checkbox" name="checkAll">
-            </th>
-            <th>Index</th>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th>Mã tác giả</th>
+            <th>Tên tác giả</th>
+            <th>Ngày sinh</th>
+            <th>Nơi sinh</th>
+            <th>Số điện thoại</th>
+            <th>Giới tính</th>
+            <th>Lựa chọn</th>
         </tr>
     </thead>
+    <?php 
+        $result = show_Author();
+        while($rows = $result->fetch_assoc())
+        {
+    ?>
     <tbody>
         <tr>
             <td>
-                <input type="checkbox" name="id">
+                <h6><?php echo $rows['maTG'] ?></h6>
             </td>
             <td>
-                <a href="">text</a>
+                <h6><?php echo $rows['tenTG'] ?></h6>
             </td>
             <td>
-                <a href="">text</a>
+                <h6><?php echo $rows['ngaySinh'] ?></h6>
             </td>
             <td>
-                <a href="">text</a>
+                <h6><?php echo $rows['noiSinh'] ?></h6>
             </td>
             <td>
-                <a href="">text</a>
+                <h6><?php echo $rows['soDT'] ?></h6>
             </td>
             <td>
-                <button class="badge badge-danger">Inactive</button>
+                <h6><?php echo $rows['gioiTinh'] ?></h6>
             </td>
             <td>
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalLoginForm">
-                    Edit
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateForm">
+                    Sửa
                 </button>
-                <button class="btn btn-danger btn-sm ml-1">Delete</button>
+                <button class="btn btn-danger btn-sm ml-1">
+                    <a href="" style="color: aliceblue;">Xóa</a>
+                </button>
             </td>
         </tr>
 
         <!-- End of product loop -->
     </tbody>
+    <?php }?>
 </table>
 
 <!-- Modal -->
-<div id="ModalLoginForm" class="modal fade">
+<!-- Update-->
+<div id="UpdateForm" class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
-                <h1 class="modal-title">Login</h1>
+                <h1 class="modal-title">Create</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="">
+                <form role="form" method="POST" action="author_Controller.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
-                        <label class="control-label">E-Mail Address</label>
+                        <label class="control-label">Mã tác giả</label>
                         <div>
-                            <input type="email" class="form-control input-lg" name="email" value="">
+                            <input type="text" class="form-control input-lg" name="maTG" value="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Password</label>
+                        <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="password" class="form-control input-lg" name="password">
+                            <input type="text" class="form-control input-lg" name="tenTG" value="">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label">Ngày sinh</label>
+                        <div>
+                            <input type="date" class="form-control input-lg" name="ngaySinh">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Nơi sinh</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="noiSinh" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">SĐT</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember"> Remember Me
-                                </label>
+                                <input type="radio" id="html" name="gioiTinh" value="Nam">
+                                <label for="html">Nam</label>
+                                <a href=""></a>
+                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
+                                <label for="css">Nữ</label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div>
-                            <button type="submit" class="btn btn-success">Login</button>
-
-                            <a class="btn btn-link" href="">Forgot Your Password?</a>
+                    <div class="form-group ">
+                        <div class ="d-flex">
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-SuaTG">Thêm</button>
                         </div>
                     </div>
                 </form>
@@ -130,7 +159,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<!-- End modal -->
+<!-- End update  -->
 
 <!-- Create -->
 <div id="Create" class="modal fade">
@@ -140,49 +169,55 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                 <h1 class="modal-title">Create</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="">
+                <form role="form" method="POST" action="author_Controller.php">
                     <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">Mã tác giả</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="maTG" value="">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="email" class="form-control input-lg" name="name" value="">
+                            <input type="text" class="form-control input-lg" name="tenTG" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Ngày sinh</label>
                         <div>
-                            <input type="date" class="form-control input-lg" name="password">
+                            <input type="date" class="form-control input-lg" name="ngaySinh">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Nơi sinh</label>
                         <div>
-                            <input type="email" class="form-control input-lg" name="address" value="">
+                            <input type="text" class="form-control input-lg" name="noiSinh" value="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">SĐT</label>
                         <div>
-                            <input type="email" class="form-control input-lg" name="phoneNumber" value="">
+                            <input type="text" class="form-control input-lg" name="soDT" value="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
-                                <input type="radio" id="html" name="fav_language" value="HTML" ">
+                                <input type="radio" id="html" name="gioiTinh" value="Nam">
                                 <label for="html">Nam</label>
                                 <a href=""></a>
-                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
                                 <label for="css">Nữ</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class ="d-flex">
-                            <button type="submit" class="btn btn-success ml-auto">Thêm</button>
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-ThemTG">Thêm</button>
                         </div>
                     </div>
                 </form>
