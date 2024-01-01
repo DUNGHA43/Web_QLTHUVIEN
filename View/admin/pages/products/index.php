@@ -113,12 +113,6 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                 <form role="form" method="POST" action="author_Controller.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
-                        <label class="control-label">Mã tác giả</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="maTG" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
                             <input type="text" class="form-control input-lg" name="tenTG" value="">
@@ -161,7 +155,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 
                     <div class="form-group ">
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-success ml-auto" name="btn-SuaTG">Thêm</button>
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-SuaTG">Sửa</button>
                         </div>
                     </div>
                 </form>
@@ -181,12 +175,6 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <div class="modal-body">
                 <form role="form" method="POST" action="author_Controller.php">
                     <input type="hidden" name="_token" value="">
-                    <div class="form-group">
-                        <label class="control-label">Mã tác giả</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="maTG" value="">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
