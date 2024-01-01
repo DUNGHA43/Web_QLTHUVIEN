@@ -4,6 +4,14 @@ $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 include "../Web_QLTHUVIEN/Model/Author_Model.php";
 ?>
+
+
+<form method="post" enctype="multipart/form-data" action="http://localhost/Web_QLTHUVIEN/config/process-form.php">
+    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
+    <label for="image">Image file</label>
+    <input type="file" id="image" name="image">
+    <button>Upload</button>
+</form>
 <h1><span class="badge badge-secondary mb-5">Sửa tên ở đây nè!</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
@@ -130,6 +138,8 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                         </div>
                     </div>
 
+
+
                     <div class="form-group">
                         <label class="control-label">SĐT</label>
                         <div>
@@ -148,6 +158,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group ">
                         <div class="d-flex">
                             <button type="submit" class="btn btn-success ml-auto" name="btn-SuaTG">Thêm</button>
@@ -203,6 +214,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                         </div>
                     </div>
 
+
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
@@ -233,9 +245,3 @@ $htmlFilePath = ADMIN_PATH . 'layouts/default.php';
 
 include $htmlFilePath; // Thực hiện thừa kế
 ?>
-
-<style>
-    .modal-content {
-        margin-top: 100px;
-    }
-</style>

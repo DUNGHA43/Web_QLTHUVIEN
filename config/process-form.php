@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+ob_start();
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit('POST request method required');
 }
@@ -62,8 +63,12 @@ $base = preg_replace("/[^\w-]/", "_", $base);
 
 $filename = $base . "." . $pathinfo["extension"];
 
-
-$destination = '../public/admin/image/' . $filename;
+if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
+    $dir = '../public/admin/image/';
+} else {
+    $dir = "../public/client/image/";
+}
+$destination =  $dir . $filename;
 
 $i = 1;
 

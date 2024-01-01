@@ -5,7 +5,12 @@ include $dataFile;
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 ?>
-
+<form method="post" enctype="multipart/form-data" action="http://localhost/Web_QLTHUVIEN/config/process-form.php">
+    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
+    <label for="image">Image file</label>
+    <input type="file" id="image" name="image">
+    <button>Upload</button>
+</form>
 <div class="container-fluid">
     <div class="container header d-flex justify-content-center">
         <div class="row w-75 mt-5">
