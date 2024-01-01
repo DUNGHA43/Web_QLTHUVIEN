@@ -63,16 +63,14 @@ $base = preg_replace("/[^\w-]/", "_", $base);
 $filename = $base . "." . $pathinfo["extension"];
 
 
-$destination = ADMIN_PATH_Image . "/public/admin/image" . $filename;
-echo $destination;
-echo __DIR__;
-// Add a numeric suffix if the file already exists
+$destination = '../public/admin/image/' . $filename;
+
 $i = 1;
 
 while (file_exists($destination)) {
 
     $filename = $base . "($i)." . $pathinfo["extension"];
-    $destination = ADMIN_PATH_Image . "/public/admin/image" . $filename;
+    $destination = '../public/admin/image/' . $filename;
     $i++;
 }
 
