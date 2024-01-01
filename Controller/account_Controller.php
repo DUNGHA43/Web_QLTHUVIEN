@@ -6,6 +6,7 @@ include '../Model/account_Model.php';
 
 if (isset($_POST['btn-login']) && ($_POST['btn-login'])) {
     $_SESSION['slide_admin'] = 0;
+    setcookie("slide_admin", 0, time() + (86400 * 7), "/");
     $taiKhoan = $_POST['username'];
     $matKhau = $_POST['password'];
     $kq = checkUser($taiKhoan, $matKhau);
@@ -73,6 +74,7 @@ if (isset($_GET['act'])) {
             setcookie("maquyen", "", time() + (86400 * 7), "/");
             setcookie("hoTen", "", time() + (86400 * 7), "/");
             setcookie("img", "", time() + (86400 * 7), "/");
+            setcookie("slide_admin", "", time() + (86400 * 7), "/");
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
             break;
     }

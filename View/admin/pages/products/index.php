@@ -229,7 +229,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 
                     <div class="form-group ">
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-success ml-auto">Thêm</button>
+                            <button type="submit" class="btn btn-success ml-auto" name ="btn-ThemTG">Thêm</button>
                         </div>
                     </div>
                 </form>

@@ -5,7 +5,7 @@ include_once '../Model/connect.php';
 include '../Model/Author_Model.php';
 
 if (isset($_POST['btn-ThemTG'])) {
-    $maTG = $_POST['maTG'];
+    $maTG = 'TG'. generateNewAuthor();
     $tenTG = $_POST['tenTG'];
     $ngaySinh = $_POST['ngaySinh'];
     $noiSinh = $_POST['noiSinh'];
@@ -14,3 +14,4 @@ if (isset($_POST['btn-ThemTG'])) {
     add_Author($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh);
     header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
+?>

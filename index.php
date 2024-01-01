@@ -14,7 +14,22 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
         }
     }
     include $dashboard_admin_path;
-} else {
+}
+else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "1") {
+    define('ADMIN_PATH', __DIR__ . '/View/admin/');
+    if (isset($_COOKIE['slide_admin'])) {
+        switch ($_COOKIE['slide_admin']) {
+            case 0:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/dashboard/index.php';
+                break;
+            case 1:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/products/index.php';
+                break;
+        }
+    }
+    include $dashboard_admin_path;
+}
+ else {
     define('CLIENT_PATH', __DIR__ . '/View/client/');
     define('CSS_PATH', __DIR__ . '/public/css/');
     define('MODEL_PATH', __DIR__ . '/Model/');
