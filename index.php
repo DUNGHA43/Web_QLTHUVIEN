@@ -2,8 +2,7 @@
 session_start();
 ob_start();
 if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
-    define('ADMIN_PATH', __DIR__ . '/View/admin/');
-    define('ADMIN_PATH_Image', __DIR__);
+    define('ADMIN_PATH', __DIR__ . '/View/admin/');;
     $dashboard_admin_path = ADMIN_PATH . 'pages/products/index.php';
     include $dashboard_admin_path;
     $dashboard_admin_Image = ADMIN_PATH_Image . '/config/process-form.php';
