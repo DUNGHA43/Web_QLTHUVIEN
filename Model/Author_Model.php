@@ -14,6 +14,7 @@
             return false;
         }
     }
+
     function show_Author()
     {
         $conn = connectSQL();
@@ -21,6 +22,7 @@
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
+
     function generateNewAuthor()
     {
         $addTG = show_Author();
@@ -44,5 +46,12 @@
         }
         
         return count($arrMaTG) + 1;
+    }
+
+    function getTG($maTG){
+        $conn = connectSQL();
+        $sql = "SELECT * FROM tbltacgia WHERE maTG='".$maTG."'";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
     }
 ?>

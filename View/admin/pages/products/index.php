@@ -87,15 +87,17 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <h6><?php echo $rows['gioiTinh'] ?></h6>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateForm">
+                <!-- data-toggle="modal" data-target="#UpdateForm -->
+                    <a type="button" href = "author_Controller.php?smTG=<?php echo$rows['maTG'];?>" class="btn btn-primary btn-sm" ">
                         Sửa
-                    </button>
+                    </a>
                     <button class="btn btn-danger btn-sm ml-1">
                         <a href="" style="color: aliceblue;">Xóa</a>
                     </button>
                 </td>
             </tr>
 
+           
             <!-- End of product loop -->
         </tbody>
     <?php } ?>
@@ -103,10 +105,13 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 
 <!-- Modal -->
 <!-- Update-->
+
+<!-- End update  -->
 <div id="UpdateForm" class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
+           
                 <h1 class="modal-title">Create</h1>
             </div>
             <div class="modal-body">
@@ -115,7 +120,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tenTG" value="">
+                            <input type="text" class="form-control input-lg" name="tenTG" value="<?php echo $udTG[''] ?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -163,8 +168,6 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<!-- End update  -->
-
 <!-- Create -->
 <div id="Create" class="modal fade">
     <div class="modal-dialog" role="document">
