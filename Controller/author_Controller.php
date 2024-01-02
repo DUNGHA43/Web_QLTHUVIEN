@@ -17,10 +17,10 @@ if(isset($_GET['smTG'])){
     echo $_GET['smTG'];
     $smTG = $_GET['smTG'];
     $rs = getTG($smTG);
-    $udTG = mysqli_fetch_assoc($rs);
-    echo "<pre>";
-    print_r($udTG) ;
-    //header("location: http://localhost/Web_QLTHUVIEN/View/admin/pages/products/index.php");
+    $udTG = mysqli_fetch_array($rs);
+    $udTG['maTG'];
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?data=".urlencode(serialize($udTG)));
+    exit;
 }
 
 if (isset($_POST['btn-ThemTG'])) {

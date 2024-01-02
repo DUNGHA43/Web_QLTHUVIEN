@@ -88,7 +88,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                 </td>
                 <td>
                 <!-- data-toggle="modal" data-target="#UpdateForm -->
-                    <a type="button" href = "author_Controller.php?smTG=<?php echo$rows['maTG'];?>" class="btn btn-primary btn-sm" ">
+                    <a type="button" href = "author_Controller.php?smTG=<?php echo$rows['maTG'];?>" class="btn btn-primary btn-sm" >
                         Sửa
                     </a>
                     <button class="btn btn-danger btn-sm ml-1">
@@ -102,17 +102,26 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
         </tbody>
     <?php } ?>
 </table>
-
 <!-- Modal -->
 <!-- Update-->
-
+<?php
+    $received_data;
+    if(isset($_GET['data']))
+    {
+        $received_data = unserialize(urldecode($_GET['data']));
+        print_r($received_data);
+    }
+    else
+    {
+        $received_data = "No data";
+    }
+?>
 <!-- End update  -->
 <div id="UpdateForm" class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
-           
-                <h1 class="modal-title">Create</h1>
+                <h1 class="modal-title"><?php print_r($received_data); ?></h1>
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="author_Controller.php">
@@ -120,7 +129,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tenTG" value="<?php echo $udTG[''] ?>">
+                            <input type="text" class="form-control input-lg" name="tenTG" value="">
                         </div>
                     </div>
                     <div class="form-group">
