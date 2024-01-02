@@ -45,4 +45,11 @@
         
         return count($arrMaTG) + 1;
     }
+
+    function seachByMaTG($matg){
+        $conn = connectSQL();
+        $sql = "SELECT * FROM tbltacgia WHERE maTG =$matg";
+        $rs= mysqli_query($conn,$sql);
+        return $rs;
+    }
 ?>

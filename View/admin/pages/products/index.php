@@ -62,73 +62,77 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <th>Lựa chọn</th>
         </tr>
     </thead>
+    <tbody>
     <?php
     $result = show_Author();
     while ($rows = $result->fetch_assoc()) {
-    ?>
-        <tbody>
-            <tr>
-                <td>
-                    <h6><?php echo $rows['maTG'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['tenTG'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['ngaySinh'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['noiSinh'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['soDT'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['gioiTinh'] ?></h6>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateForm">
-                        Sửa
-                    </button>
-                    <button class="btn btn-danger btn-sm ml-1">
-                        <a href="" style="color: aliceblue;">Xóa</a>
-                    </button>
-                </td>
-            </tr>
+        $maTG = $rows['maTG'];
+        $tenTG = $rows['tenTG'];
+        $ngaySinh = $rows['ngaySinh'];
+        $noiSinh = $rows['noiSinh'];
+        $soDT = $rows['soDT'];
+        $gioiTinh = $rows['gioiTinh'];
+        echo '<tr>
+            
+        <th scope="row">'.$maTG.'</th>
+        <td>'.$tenTG.'</td>
+        <td>'.$ngaySinh.'</td>
+        <td>'. $noiSinh.'</td>
+        <td>'. $soDT.'</td>
+        <td>'. $gioiTinh.'</td>
+        <td>
+            <button href="author_Controller.php?updateTG='.$maTG.' " type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#UpdateForm">
+                Sửa
+            </button>
+            <button class="btn btn-danger btn-sm ml-1"> <a href="" style="color: aliceblue;">Xóa</a></button>
+        </td>
+        </tr>';
 
-            <!-- End of product loop -->
-        </tbody>
-    <?php } ?>
+            //<!-- End of product loop -->
+}  ?>
+    </tbody>
+
+    
 </table>
 
+<?php
+    if ($_GET[$maTG]){
+        $matg = $_GET[$maTG];
+        $kqByID = seachByMaTG($matg);  
+    }
+?>
 <!-- Modal -->
 <!-- Update-->
+
 <div id="UpdateForm" class="modal fade">
+    
     <div class="modal-dialog" role="document">
+    
         <div class="modal-content modal-content">
             <div class="modal-header">
                 <h1 class="modal-title">Create</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="author_Controller.php">
+                <form role="form" method="POST" action="">
+                
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tenTG" value="">
+                            <input type="text" class="form-control input-lg" name="tenTG" value=<?php  print_r($kqByID);?>>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Ngày sinh</label>
                         <div>
-                            <input type="date" class="form-control input-lg" name="ngaySinh">
+                            <input type="date" class="form-control input-lg" name="ngaySinh" value=<?php echo var_dump($kqByID) ;?>>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Nơi sinh</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="noiSinh" value="">
+                            <input type="text" class="form-control input-lg" name="noiSinh" value=<?php echo $noisinh;?>>
                         </div>
                     </div>
 
@@ -137,17 +141,17 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <label class="control-label">SĐT</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                            <input type="text" class="form-control input-lg" name="soDT" value=<?php echo $sdt;?>>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
-                                <input type="radio" id="html" name="gioiTinh" value="Nam">
+                                <input type="radio" id="html" name="gioiTinh" value=<?php echo $gioiTinh;?>>
                                 <label for="html">Nam</label>
                                 <a href=""></a>
-                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
+                                <input type="radio" id="css" name="gioiTinh" value=<?php echo $gioiTinh;?>>
                                 <label for="css">Nữ</label>
                             </div>
                         </div>
@@ -167,6 +171,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 
 <!-- Create -->
 <div id="Create" class="modal fade">
+<?php echo var_dump($updateTG) ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
