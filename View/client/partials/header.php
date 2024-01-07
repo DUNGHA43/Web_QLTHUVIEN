@@ -17,30 +17,29 @@
     
     <!-- Example single danger button -->
     
-    <?php if (isset($_SESSION['hoTen']) && isset($_SESSION['img']) && ($_SESSION['hoTen'] != "")) {
+    <?php if (isset($_SESSION['taikhoan']) && isset($_SESSION['hoTen']) && isset($_SESSION['img']) && ($_SESSION['hoTen'] != "")) {
       echo '<div class="dropdown ">
       <button class="btn btn-secondary dropdown-toggle buttonDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
       <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'. $_SESSION['hoTen'] . '</span>
       <img src="public/client/image/'.$_SESSION['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
       <div class="dropdown-menu">
-        <a class="navbar-brand dropdown-item" href="#">Thông tin cá nhân</a>
+        <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
         <a class="navbar-brand dropdown-item" href="#">abcxyz</a>
         <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     }
-    else if(isset($_COOKIE['hoTen']) && isset($_COOKIE['img']) && ($_COOKIE['hoTen'] != "")){
+    else if(isset($_COOKIE['taikhoan']) && isset($_COOKIE['hoTen']) && isset($_COOKIE['img']) && ($_COOKIE['hoTen'] != "")){
       echo '<div class="dropdown ">
       <button class="btn btn-secondary dropdown-toggle buttonDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
       <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'. $_COOKIE['hoTen'] . '</span>
       <img src="public/client/image/'.$_COOKIE['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
-      <div class="dropdown-menu">
-        
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
+      <div class="dropdown-menu">    
+      <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
+      <a class="navbar-brand dropdown-item" href="#">abcxyz</a>
+      <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     } 

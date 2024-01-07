@@ -8,6 +8,8 @@ if (isset($_POST['btn-login']) && ($_POST['btn-login'])) {
     $_SESSION['slide_admin'] = 0;
     setcookie("slide_admin", 0, time() + (86400 * 7), "/");
     $taiKhoan = $_POST['username'];
+    $_SESSION['taikhoan'] = $taiKhoan;
+    setcookie("taikhoan", $taiKhoan, time() + (86400 * 7), "/");
     $matKhau = $_POST['password'];
     $kq = checkUser($taiKhoan, $matKhau);
     $rows = mysqli_fetch_array(getUserInfo($taiKhoan, $matKhau));
@@ -70,11 +72,13 @@ if (isset($_GET['act'])) {
             if (isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
             if (isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);
             if (isset($_SESSION['img'])) unset($_SESSION['img']);
-            if (isset($_SESSION['slide_admin'])) $_SESSION['slide_admin'];
+            if (isset($_SESSION['slide_admin'])) unset($_SESSION['slide_admin']);
             setcookie("maquyen", "", time() + (86400 * 7), "/");
             setcookie("hoTen", "", time() + (86400 * 7), "/");
             setcookie("img", "", time() + (86400 * 7), "/");
             setcookie("slide_admin", "", time() + (86400 * 7), "/");
+            if (isset($_SESSION['taikhoan'])) unset($_SESSION['taikhoan']);
+            setcookie("taikhoan", $taiKhoan, time() + (86400 * 7), "/");
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
             break;
     }
