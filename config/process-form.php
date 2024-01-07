@@ -56,9 +56,7 @@ if (!in_array($_FILES["image"]["type"], $mime_types)) {
 
 // Replace any characters not \w- in the original filename
 $pathinfo = pathinfo($_FILES["image"]["name"]);
-
 $base = $pathinfo["filename"];
-
 $base = preg_replace("/[^\w-]/", "_", $base);
 
 $filename = $base . "." . $pathinfo["extension"];
@@ -84,4 +82,13 @@ if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
     exit("Can't move uploaded file");
 }
 
-echo "File uploaded successfully.";
+
+$uploadedFile = $_FILES["image"];
+$uploadedFileName = $uploadedFile["name"];
+$fileInfo = pathinfo($uploadedFileName);
+$fileExtension = $fileInfo["extension"];
+
+echo $uploadedFileName;
+$_SESSION['update_img'] = $uploadedFileName;
+header('location: http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung');
+

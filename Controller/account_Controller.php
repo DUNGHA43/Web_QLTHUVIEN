@@ -7,6 +7,8 @@ include '../Model/account_Model.php';
 if (isset($_POST['btn-login']) && ($_POST['btn-login'])) {
     $_SESSION['slide_admin'] = 0;
     setcookie("slide_admin", 0, time() + (86400 * 7), "/");
+    $_SESSION['slide_client'] = 0;
+    setcookie("slide_client", 0, time() + (86400 * 7), "/");
     $taiKhoan = $_POST['username'];
     $_SESSION['taikhoan'] = $taiKhoan;
     setcookie("taikhoan", $taiKhoan, time() + (86400 * 7), "/");
@@ -50,16 +52,48 @@ if (isset($_POST['btn-reg']) && ($_POST['btn-reg'])) {
     $gioiTinh = $_POST['gender'];
     $anhTaiKhoan = ($_POST['gender'] == "male") ? "nam.jpg" : "nữ.jpg";
     $maquyen = '2';
-
     addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan, $maquyen);
 }
+
+if(isset($_POST['btn-capnhat']))
+{
+    $taiKhoan = $_SESSION['taikhoan'];
+    $maSV = $_POST['masv'];
+    $hoTen = $_POST['hoten'];
+    $_SESSION['hoTen'] = $hoTen;
+    $ngaySinh = $_POST['ngaysinh'];
+    $soCCCD = $_POST['cancuoc'];
+    $soDT = $_POST['sodt'];
+    $email = $_POST['email'];
+    $diaChi = $_POST['diachi'];
+    $gioiTinh = $_POST['gender'];
+    $anhTaiKhoan = $_SESSION['img'];
+    if(isset($_SESSION['update_img']))
+    {
+        $anhTaiKhoan = $_SESSION['update_img'];
+    }
+    $_SESSION['img'] = $anhTaiKhoan;
+    if (isset($_SESSION['update_img'])) unset($_SESSION['update_img']);
+    setcookie("hoTen", $hoTen, time() + (86400 * 7), "/");
+    setcookie("img", $anhTaiKhoan, time() + (86400 * 7), "/");
+    updateAccount($maSV, $hoTen, $ngaySinh, $gioiTinh, $soDT, $email, $soCCCD, $diaChi, $anhTaiKhoan, $taiKhoan);
+    echo "oce";
+}
+
 include '../View/client/partials/header.php';
 include '../View/admin/partials/slider.php';
 if (isset($_GET['act'])) {
     echo $_GET['act'];
 
     switch ($_GET['act']) {
-            //case 'userinfo':
+        case 'thongtinnguoidung' :
+            $_SESSION['slide_client'] = 1;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            break;
+        case 'trangchuclient' :
+            $_SESSION['slide_client'] = 0;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            break;
         case 'trangchu':
             $_SESSION['slide_admin'] = 0;
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
@@ -77,12 +111,15 @@ if (isset($_GET['act'])) {
             if (isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);
             if (isset($_SESSION['img'])) unset($_SESSION['img']);
             if (isset($_SESSION['slide_admin'])) unset($_SESSION['slide_admin']);
+            if (isset($_SESSION['slide_client'])) unset($_SESSION['slide_client']);
+            if (isset($_SESSION['taikhoan'])) unset($_SESSION['taikhoan']);
+            if (isset($_SESSION['update_img'])) unset($_SESSION['update_img']);
             setcookie("maquyen", "", time() + (86400 * 7), "/");
             setcookie("hoTen", "", time() + (86400 * 7), "/");
             setcookie("img", "", time() + (86400 * 7), "/");
-            setcookie("slide_admin", "", time() + (86400 * 7), "/");
-            if (isset($_SESSION['taikhoan'])) unset($_SESSION['taikhoan']);
+            setcookie("slide_admin", "", time() + (86400 * 7), "/"); 
             setcookie("taikhoan", $taiKhoan, time() + (86400 * 7), "/");
+            setcookie("slide_client", 0, time() + (86400 * 7), "/");
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
             break;
     }

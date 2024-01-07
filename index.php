@@ -35,10 +35,42 @@ else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "1") {
     }
     include $dashboard_admin_path;
 }
- else {
+else if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "2") {
     define('CLIENT_PATH', __DIR__ . '/View/client/');
     define('CSS_PATH', __DIR__ . '/public/css/');
     define('MODEL_PATH', __DIR__ . '/Model/');
+    if (isset($_SESSION['slide_client'])) {
+        switch ($_SESSION['slide_client']) {
+            case 0:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/index.php';
+                break;
+            case 1:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/thongtincanhan.php';
+                break;
+        }
+    }
+    include $htmlFilePath;
+}
+else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "2") {
+    define('CLIENT_PATH', __DIR__ . '/View/client/');
+    define('CSS_PATH', __DIR__ . '/public/css/');
+    define('MODEL_PATH', __DIR__ . '/Model/');
+    if (isset($_COOKIE['slide_client'])) {
+        switch ($_COOKIE['slide_client']) {
+            case 0:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/index.php';
+                break;
+            case 1:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/thongtincanhan.php';
+                break;
+        }
+    }
+    include $htmlFilePath;
+}
+ else {
+    define('CSS_PATH', __DIR__ . '/public/css/');
+    define('MODEL_PATH', __DIR__ . '/Model/');
+    define('CLIENT_PATH', __DIR__ . '/View/client/');
     $htmlFilePath = CLIENT_PATH . 'pages/products/index.php';
     include $htmlFilePath;
 }
