@@ -64,7 +64,9 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     </thead>
     <?php
     $result = show_Author();
-    while ($rows = $result->fetch_assoc()) {
+    $s;
+    
+    while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>
             <tr>
@@ -87,12 +89,10 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <h6><?php echo $rows['gioiTinh'] ?></h6>
                 </td>
                 <td>
-                <!-- data-toggle="modal" data-target="#UpdateForm -->
-                    <a type="button" href = "author_Controller.php?smTG=<?php echo$rows['maTG'];?>" class="btn btn-primary btn-sm" >
-                        Sửa
-                    </a>
-                    <button class="btn btn-danger btn-sm ml-1">
-                        <a href="" style="color: aliceblue;">Xóa</a>
+                <!--    -->
+                <button type="button" onclick="<?php $s = $rows['maTG'];  echo $s;?>" class="btn btn-primary" data-toggle="modal" data-target="#UpdateForm"> Sửa</button>
+                    <button class="btn btn-danger btn-sm ml-1" >
+                        <a   style="color: aliceblue;">Xóa</a>
                     </button>
                 </td>
             </tr>
@@ -101,6 +101,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <!-- End of product loop -->
         </tbody>
     <?php } ?>
+        
 </table>
 <!-- Modal -->
 <!-- Update-->
@@ -117,11 +118,11 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     }
 ?>
 <!-- End update  -->
-<div id="UpdateForm" class="modal fade">
+<div id="UpdateForm"  class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
-                <h1 class="modal-title"><?php print_r($received_data); ?></h1>
+                <h1 class="modal-title"><?php echo $s; ?></h1>
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="author_Controller.php">
