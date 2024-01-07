@@ -68,6 +68,10 @@ if (isset($_GET['act'])) {
             $_SESSION['slide_admin'] = 1;
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
             break;
+        case 'updatetacgia' :
+            $_SESSION['slide_admin'] = 2;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            break;
         case 'thoat':
             if (isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
             if (isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);

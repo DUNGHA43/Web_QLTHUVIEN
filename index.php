@@ -11,6 +11,9 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
             case 1:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/products/index.php';
                 break;
+            case 2:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/products/update_author.php';
+                break;
         }
     }
     include $dashboard_admin_path;
@@ -24,6 +27,9 @@ else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "1") {
                 break;
             case 1:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/products/index.php';
+                break;
+            case 2:
+                 $dashboard_admin_path = ADMIN_PATH . 'pages/products/update_author.php';
                 break;
         }
     }

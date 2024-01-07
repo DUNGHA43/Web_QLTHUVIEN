@@ -3,14 +3,6 @@
     <a class="navbar-brand a" href="http://localhost/Web_QLTHUVIEN/index.php">Trang chủ</span></a>
     <a class="navbar-brand">Về chúng tôi</a>
     <a class="navbar-brand">Mượn sách</a>
-    <?php if(isset($_COOKIE['hoTen']))
-    {
-      echo $_COOKIE['hoTen'];
-    }else
-    {
-      echo "ko có";
-    }
-     ?>
   </form>
   <form class="form-inline">
     <!-- Example split danger button -->
