@@ -87,19 +87,19 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <h6><?php echo $rows['gioiTinh'] ?></h6>
                 </td>
                 <td>
-                <!--    -->
-                <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Sửa</a>
-                <a onclick="return Del('<?php echo $rows['tenTG'] ?>')" href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Xóa</a>
+                    <!--    -->
+                    <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG'] ?>" class="btn btn-warning">Sửa</a>
+                    <a onclick="return Del('<?php echo $rows['tenTG'] ?>')" href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG'] ?>" class="btn btn-danger">Xóa</a>
                 </td>
             </tr>
 
-           
+
             <!-- End of product loop -->
         </tbody>
     <?php } ?>
 
     <script>
-        function Del(name){
+        function Del(name) {
             return confirm("Bạn có muốn xóa tác giả : " + name + "?");
         }
     </script>
@@ -117,7 +117,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <label class="control-label">Tên tác giả</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="tenTG" value="">
+                            <input type="text" class="form-control input-lg" name="tenTG" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -137,7 +137,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <label class="control-label">SĐT</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                            <input type="number" class="form-control input-lg" name="soDT" value="">
                         </div>
                     </div>
 
@@ -145,7 +145,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
-                                <input type="radio" id="html" name="fav_language" value="HTML" ">
+                                <input type="radio" id="html" name="fav_language" value="HTML">
                                 <label for=" html">Nam</label>
                                 <a href=""></a>
                                 <input type="radio" id="css" name="gioiTinh" value="Nữ">
@@ -156,7 +156,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 
                     <div class="form-group ">
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-success ml-auto" name ="btn-ThemTG">Thêm</button>
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-ThemTG">Thêm</button>
                         </div>
                     </div>
                 </form>
