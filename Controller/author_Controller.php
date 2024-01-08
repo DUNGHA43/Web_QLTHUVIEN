@@ -18,6 +18,12 @@ if (isset($_POST['btn-ThemTG'])) {
 if (isset($_GET['act'])) {
     
     switch ($_GET['act']) {
+        case 'deletetacgia':
+            $smTG = $_GET['maTG'];
+            DeleteTacgia($smTG);
+            $_SESSION['slide_admin'] = 1;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            break;
         case 'updatetacgia':
             $_SESSION['slide_admin'] = 2;
             $smTG = $_GET['maTG'];

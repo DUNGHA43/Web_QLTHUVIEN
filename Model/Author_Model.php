@@ -65,4 +65,14 @@
             echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
+
+    function DeleteTacgia($maTG){
+        $conn = connectSQL();
+        $sql = "DELETE FROM `tbltacgia` WHERE `maTG`='$maTG'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
 ?>

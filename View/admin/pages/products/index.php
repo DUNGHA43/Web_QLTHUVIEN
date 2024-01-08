@@ -89,7 +89,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                 <td>
                 <!--    -->
                 <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Sửa</a>
-                <a href="" class="btn btn-primary">Xóa</a>
+                <a href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Xóa</a>
                 </td>
             </tr>
 
@@ -97,7 +97,6 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <!-- End of product loop -->
         </tbody>
     <?php } ?>
-        
 </table>
 <!-- Create -->
 <div id="Create" class="modal fade">
