@@ -53,6 +53,7 @@ if (isset($_POST['btn-reg']) && ($_POST['btn-reg'])) {
     $anhTaiKhoan = ($_POST['gender'] == "male") ? "nam.jpg" : "nữ.jpg";
     $maquyen = '2';
     addAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan, $maquyen);
+    header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
 
 if(isset($_POST['btn-capnhat']))
@@ -100,10 +101,6 @@ if (isset($_GET['act'])) {
             break;
         case 'tacgia':
             $_SESSION['slide_admin'] = 1;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
-            break;
-        case 'updatetacgia' :
-            $_SESSION['slide_admin'] = 2;
             header("location: http://localhost/Web_QLTHUVIEN/index.php");
             break;
         case 'thoat':

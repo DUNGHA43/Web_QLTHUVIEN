@@ -64,8 +64,6 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     </thead>
     <?php
     $result = show_Author();
-    $s;
-    
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>
@@ -90,7 +88,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                 </td>
                 <td>
                 <!--    -->
-                <a href="account_Controller.php?act=updatetacgia" class="btn btn-primary">Sửa</a>
+                <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Sửa</a>
                 <a href="" class="btn btn-primary">Xóa</a>
                 </td>
             </tr>

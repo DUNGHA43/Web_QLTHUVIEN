@@ -1,30 +1,11 @@
 <?php
 session_start();
 ob_start();
-include '../Model/connect.php';
-include '../Model/Author_Model.php';
-
-// if(isset($_GET['smTG'])){
-//     echo $_GET['smTG'];
-//     $smTG = $_GET['smTG'];
-    
-//     $rs = getTG($smTG);
-//     echo "<pre>";
-//     print_r(mysqli_fetch_assoc($rs));
-// }
-
-if(isset($_GET['smTG'])){
-    echo $_GET['smTG'];
-    $smTG = $_GET['smTG'];
-    $rs = getTG($smTG);
-    $udTG = mysqli_fetch_array($rs);
-    $udTG['maTG'];
-    header("location: http://localhost/Web_QLTHUVIEN/index.php?data=".urlencode(serialize($udTG)));
-    exit;
-}
+include "../Model/connect.php";
+include "../Model/Author_Model.php";
 
 if (isset($_POST['btn-ThemTG'])) {
-    $maTG = 'TG'. generateNewAuthor();
+    $maTG = 'TG' . generateNewAuthor();
     $tenTG = $_POST['tenTG'];
     $ngaySinh = $_POST['ngaySinh'];
     $noiSinh = $_POST['noiSinh'];
@@ -34,6 +15,25 @@ if (isset($_POST['btn-ThemTG'])) {
     header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
 
+if (isset($_GET['act'])) {
     
+    switch ($_GET['act']) {
+        case 'updatetacgia':
+            $_SESSION['slide_admin'] = 2;
+            $smTG = $_GET['maTG'];
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?maTG=$smTG");
+            break;
+    }
+}
 
-?>
+if (isset($_POST['btn-SuaTG']) && ($_POST['btn-SuaTG'])){
+    $maTG = $_POST['maTG'];
+    $tenTG = $_POST['tenTG'];
+    $ngaySinh = $_POST['ngaySinh'];
+    $noiSinh = $_POST['noiSinh'];
+    $soDT = $_POST['soDT'];
+    $gioiTinh = $_POST['gioiTinh'];
+    UpdateTacGia($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh);
+    $_SESSION['slide_admin'] = 1;
+    header("location: http://localhost/Web_QLTHUVIEN/index.php");
+}
