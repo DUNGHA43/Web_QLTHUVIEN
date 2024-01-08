@@ -89,7 +89,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
                 <td>
                 <!--    -->
                 <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Sửa</a>
-                <a href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Xóa</a>
+                <a onclick="return Del('<?php echo $rows['tenTG'] ?>')" href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG']?>" class="btn btn-primary">Xóa</a>
                 </td>
             </tr>
 
@@ -97,6 +97,12 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <!-- End of product loop -->
         </tbody>
     <?php } ?>
+
+    <script>
+        function Del(name){
+            return confirm("Bạn có muốn xóa tác giả : " + name + "?");
+        }
+    </script>
 </table>
 <!-- Create -->
 <div id="Create" class="modal fade">
