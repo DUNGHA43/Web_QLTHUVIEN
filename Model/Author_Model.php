@@ -23,6 +23,14 @@
         return $rs;
     }
 
+    function show_Author_ByName($value)
+    {
+        $conn = connectSQL();
+        $sql = "SELECT * FROM `tbltacgia` WHERE `tenTG` LIKE '%$value%'";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
+
     function generateNewAuthor()
     {
         $addTG = show_Author();

@@ -43,3 +43,12 @@ if (isset($_POST['btn-SuaTG']) && ($_POST['btn-SuaTG'])){
     $_SESSION['slide_admin'] = 1;
     header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
+
+if (isset($_POST['btn_Search']) && ($_POST['btn_Search'])){
+    echo "<pre>";
+    print_r($_POST);
+    $valueSearch = $_POST['keyword'];
+    $_SESSION['slide_admin'] = 1;
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch");
+}
+?>

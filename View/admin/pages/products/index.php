@@ -32,10 +32,10 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             </form>
         </div>
         <div class="col-6">
-            <form id="form-search" class="input-group">
+            <form id="form-search" class="input-group" method="POST" action="author_Controller.php">
                 <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
                 <div class="input-group-append">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
                 </div>
             </form>
         </div>
@@ -63,7 +63,11 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
         </tr>
     </thead>
     <?php
-    $result = show_Author();
+    $smTG = $_GET['value'];
+    if($smTG==""){
+        $result = show_Author();
+    }else
+        $result = show_Author_ByName($smTG);   
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>

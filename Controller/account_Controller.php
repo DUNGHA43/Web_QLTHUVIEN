@@ -101,7 +101,7 @@ if (isset($_GET['act'])) {
             break;
         case 'tacgia':
             $_SESSION['slide_admin'] = 1;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'thoat':
             if (isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
