@@ -82,6 +82,19 @@ if(isset($_POST['btn-capnhat']))
     header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
 
+if(isset($_POST['btn-doimatkhau'])){
+    $row = mysqli_fetch_array(showUser($_SESSION['taikhoan']));
+    $message;
+    if($rows['matKhau'] = $_POST['mkCu'])
+    {
+        $kq = changePass($_SESSION['taikhoan'], $_POST['mkMoi']);
+        ($kq > 0) ? $message = "Thay mật khẩu thành công!" : "Thay mật khẩu không thành công!";
+    }
+    $_SESSION['slide_client'] = 0;
+    header("location: http://localhost/Web_QLTHUVIEN/index.php");
+}
+
+
 include '../View/client/partials/header.php';
 include '../View/admin/partials/slider.php';
 if (isset($_GET['act'])) {

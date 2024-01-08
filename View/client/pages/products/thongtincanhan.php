@@ -6,7 +6,7 @@ include "../Web_QLTHUVIEN/Model/account_Model.php";
 $row = mysqli_fetch_array(showUser($_SESSION['taikhoan']));
 $tmpimg;
 ?>
-<div id="Create" class="modal fade">
+<div id="update" class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
@@ -32,7 +32,7 @@ $tmpimg;
         <div class="card" style="border-radius: 15px;">
           <div class="card-body text-center">
             <div class="mt-3 mb-4">
-            <button class="rounded-circle img-fluid" type="button" data-toggle="modal" data-target="#Create">
+            <button class="rounded-circle img-fluid" type="button" data-toggle="modal" data-target="#update">
                 <?php 
                 if(isset($_SESSION['update_img']))
                 {

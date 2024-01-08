@@ -50,4 +50,19 @@
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
+
+    function changePass($taiKhoan, $matKhau)
+    {
+        $conn = connectSQL();
+        $sql = "UPDATE tbltaikhoan SET matKhau = '$matKhau' WHERE taiKhoan = '$taiKhoan'";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>
