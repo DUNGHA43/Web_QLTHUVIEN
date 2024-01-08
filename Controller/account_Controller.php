@@ -78,7 +78,8 @@ if(isset($_POST['btn-capnhat']))
     setcookie("hoTen", $hoTen, time() + (86400 * 7), "/");
     setcookie("img", $anhTaiKhoan, time() + (86400 * 7), "/");
     updateAccount($maSV, $hoTen, $ngaySinh, $gioiTinh, $soDT, $email, $soCCCD, $diaChi, $anhTaiKhoan, $taiKhoan);
-    echo "oce";
+    $_SESSION['slide_client'] = 0;
+    header("location: http://localhost/Web_QLTHUVIEN/index.php");
 }
 
 include '../View/client/partials/header.php';

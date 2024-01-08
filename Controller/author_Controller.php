@@ -12,7 +12,7 @@ if (isset($_POST['btn-ThemTG'])) {
     $soDT = $_POST['soDT'];
     $gioiTinh = $_POST['gioiTinh'];
     add_Author($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh);
-    header("location: http://localhost/Web_QLTHUVIEN/index.php");
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
 }
 
 if (isset($_GET['act'])) {
@@ -22,7 +22,7 @@ if (isset($_GET['act'])) {
             $smTG = $_GET['maTG'];
             DeleteTacgia($smTG);
             $_SESSION['slide_admin'] = 1;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'updatetacgia':
             $_SESSION['slide_admin'] = 2;
