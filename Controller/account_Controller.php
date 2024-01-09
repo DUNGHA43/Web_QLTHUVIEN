@@ -121,6 +121,10 @@ if (isset($_GET['act'])) {
             $_SESSION['slide_admin'] = 3;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
+        case 'tailieu':
+            $_SESSION['slide_admin'] = 4;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
+            break;
         case 'thoat':
             if (isset($_SESSION['maquyen'])) unset($_SESSION['maquyen']);
             if (isset($_SESSION['hoTen'])) unset($_SESSION['hoTen']);

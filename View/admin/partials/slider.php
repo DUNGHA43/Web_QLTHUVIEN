@@ -11,7 +11,9 @@
             <li>
                 <a href="account_Controller.php?act=nhacungcap">Nhà cung cấp</a>
             </li>
-
+            <li>
+                <a href="account_Controller.php?act=tailieu">Tài Liệu</a>
+            </li>
             <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>
             </li>
