@@ -37,7 +37,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             <th>Thể loại</th>
             <th>Tác giả</th>
             <th>Hình ảnh</th>
-            <th>Mô tả</th>
+            <th>Lựa chọn</th>
         </tr>
     </thead>
     <tbody>
@@ -126,7 +126,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label">Nhà cung cấp</label>
+                        <label class="control-label">Thể loại</label>
                         <div>
                             <!-- <input type="text" class="form-control input-lg" name="soDT" value=""> -->
                             <select name="" id="" class='btn btn-light' style="width: 466px;">
