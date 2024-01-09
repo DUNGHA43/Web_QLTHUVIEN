@@ -15,10 +15,44 @@
         }
     }
 
+    function add_NCC($maNCC, $tenNCC, $soDT, $diaChi)
+    {
+        $conn = connectSQL();
+        $sql = "INSERT INTO tblnhacungcap VALUES ('$maNCC','$tenNCC','$soDT','$diaChi')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function UpdateNCC($maNCC, $tenNCC, $soDT, $diaChi){
+        $conn = connectSQL();
+        $sql = "UPDATE `tblnhacungcap` SET `maNCC`='$maNCC',`tenNCC`='$tenNCC',`soDT`='$soDT',
+        `diaChi`='$diaChi' where `maNCC`='$maNCC'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    function show_Author_All($ten)
+    {
+        $conn = connectSQL();
+        $sql = "SELECT * FROM $ten ";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
+
     function show_Author()
     {
         $conn = connectSQL();
-        $sql = "SELECT * FROM tbltacgia";
+        $sql = "SELECT * FROM tbl ";
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
@@ -31,34 +65,34 @@
         return $rs;
     }
 
-    function generateNewAuthor()
+    function generateNewAuthor($ten, $kc)
     {
-        $addTG = show_Author();
+        $addTG = show_Author_All($ten);
         $maTG = array();
         $arrMaTG = array();
         while($rows = $addTG->fetch_array())
         {
-            $maTG[] = $rows['maTG'];
+            $maTG[] = $rows[$kc];
         }
         foreach ($maTG as $TG) {
-            $ma = substr($TG,0,2);
-            $stt = substr($TG,2);
-            $arrMaTG[] = array('ma' => $ma , 'stt' => $stt);
+            $stt = preg_replace("/[^0-9]/", "", $TG);
+            echo $stt;
+            array_push($arrMaTG, $stt);
         }
         for($i = 0; $i < count($arrMaTG) - 1; $i++)
         {
-            if($arrMaTG[$i + 1]['stt'] - $arrMaTG[$i]['stt'] != 1)
+            if($arrMaTG[$i+1] - $arrMaTG[$i] != 1)
             {
-                return $arrMaTG[$i]['stt'] + 1;
+                return $arrMaTG[$i] + 1;
             }
         }
         
         return count($arrMaTG) + 1;
     }
 
-    function getTG($maTG){
+    function getTG($ten,$kc, $maTG){
         $conn = connectSQL();
-        $sql = "SELECT * FROM tbltacgia WHERE maTG='".$maTG."'";
+        $sql = "SELECT * FROM $ten WHERE $kc='".$maTG."'";
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
@@ -74,9 +108,11 @@
         }
     }
 
-    function DeleteTacgia($maTG){
+    
+
+    function DeleteTacgia($ten,$kc, $maTG){
         $conn = connectSQL();
-        $sql = "DELETE FROM `tbltacgia` WHERE `maTG`='$maTG'";
+        $sql = "DELETE FROM $ten WHERE $kc ='$maTG'";
         if (mysqli_query($conn, $sql)) {
             return true;
         } else {

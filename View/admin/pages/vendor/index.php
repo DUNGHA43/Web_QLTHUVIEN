@@ -2,6 +2,7 @@
 // Thừa kế file layout.php
 $pageTitle = "Vendor";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
+include "../Web_QLTHUVIEN/Model/Author_Model.php";
 ?>
 <h1><span class="badge badge-secondary mb-5">Nhà cung cấp!</span></h1>
 <div class="container-fluid mb-5">
@@ -10,7 +11,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 
         </div>
         <div class="col-6 mb-4">
-            <form id="form-search" class="input-group" method="POST" action="author_Controller.php">
+            <form id="form-search" class="input-group" method="POST" action="nhacungcap_Controller.php">
                 <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
                 <div class="input-group-append">
                     <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
@@ -37,31 +38,35 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             <th>Địa chỉ</th>
             <th>Lựa chọn</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <h6>aaa</h6>
-            </td>
-            <td>
-                <h6>aaa</h6>
-            </td>
-            <td>
-                <h6>aaa</h6>
-            </td>
-            <td>
-                <h6>aaa</h6>
-            </td>
-            <td>
-                <a href="" class='btn btn-warning'>Sửa</a>
-                <a href="" class='btn btn-danger'>Xóa</a>
+        <?php
+    $result = show_Author_All('tblnhacungcap');
+    while ($rows = mysqli_fetch_array($result)) {
+    ?>
+        <tbody>
+            <tr>
+                <td>
+                    <h6><?php echo $rows['maNCC'] ?></h6>
+                </td>
+                <td>
+                    <h6><?php echo $rows['tenNCC'] ?></h6>
+                </td>
+                <td>
+                    <h6><?php echo $rows['soDT'] ?></h6>
+                </td>
+                <td>
+                    <h6><?php echo $rows['diaChi'] ?></h6>
+                </td>
+                <td>
+                    <!--    -->
+                    <a href="nhacungcap_Controller.php?act=updatencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-warning">Sửa</a>
+                    <a  onclick="return Del('<?php echo $rows['maNCC'] ?>')" href="nhacungcap_Controller.php?act=deletencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
 
-            </td>
-        </tr>
 
-
-        <!-- End of product loop -->
-    </tbody>
+            <!-- End of product loop -->
+        </tbody>
+    <?php } ?>    
 
 
     <script>
@@ -78,39 +83,33 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                 <h1 class="modal-title">Thêm nhà cung cấp</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="author_Controller.php">
+                <form role="form" method="POST" action="nhacungcap_Controller.php">
                     <input type="hidden" name="_token" value="">
-                    <div class="form-group">
-                        <label class="control-label">Mã nhà cung cấp</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="tenTG" value="" required>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="control-label">Tên nhà cung cấp</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="ngaySinh">
+                            <input type="text" class="form-control input-lg" name="tenNCC">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Số điện thoại</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="noiSinh" value="">
+                            <input type="text" class="form-control input-lg" name="soDT" value="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Địa chỉ</label>
                         <div>
-                            <input type="number" class="form-control input-lg" name="soDT" value="">
+                            <input type="text" class="form-control input-lg" name="diaChi" value="">
                         </div>
                     </div>
 
 
                     <div class="form-group ">
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-success ml-auto" name="btn-ThemTG">Thêm</button>
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-ThemNCC">Thêm</button>
                         </div>
                     </div>
                 </form>

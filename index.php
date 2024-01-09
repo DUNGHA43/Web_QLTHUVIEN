@@ -20,6 +20,9 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
             case 4:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/document/index.php';
                 break;
+            case 5:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/vendor/edit.php';
+                break;
         }
     }
     include $dashboard_admin_path;

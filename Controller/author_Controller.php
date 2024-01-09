@@ -5,7 +5,7 @@ include "../Model/connect.php";
 include "../Model/Author_Model.php";
 
 if (isset($_POST['btn-ThemTG'])) {
-    $maTG = 'TG' . generateNewAuthor();
+    $maTG = 'TG' . generateNewAuthor('tbltacgia', 'maTG');
     $tenTG = $_POST['tenTG'];
     $ngaySinh = $_POST['ngaySinh'];
     $noiSinh = $_POST['noiSinh'];
@@ -15,12 +15,14 @@ if (isset($_POST['btn-ThemTG'])) {
     header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
 }
 
+
+
 if (isset($_GET['act'])) {
     
     switch ($_GET['act']) {
         case 'deletetacgia':
             $smTG = $_GET['maTG'];
-            DeleteTacgia($smTG);
+            DeleteTacgia('tbltacgia','maTG',$smTG);
             $_SESSION['slide_admin'] = 1;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
