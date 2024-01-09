@@ -142,7 +142,11 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                     <div class="form-group">
                         <label class="control-label">Hình ảnh</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                            <form method="post" enctype="multipart/form-data" action="http://localhost/Web_QLTHUVIEN/config/process-form.php">
+                                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
+                                <label for="image">Image file</label>
+                                <input type="file" id="image" name="image">
+                            </form>
                         </div>
                     </div>
 

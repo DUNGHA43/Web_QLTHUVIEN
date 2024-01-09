@@ -17,7 +17,7 @@
       </button>
       <div class="dropdown-menu">
         <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung">Thông tin cá nhân</a>
-        <button class="navbar-brand dropdown-item" type="button" data-toggle="modal" data-target="#update" style="font-size: 16px;">
+        <button class="navbar-brand dropdown-item" type="button" data-toggle="modal" data-target="#updateinfo" style="font-size: 16px;">
         Đổi mật khẩu
         </button>
         <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
@@ -47,7 +47,7 @@
   </form>
 </nav>
 
-<div id="update" class="modal fade">
+<div id="updateinfo" class="modal fade">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
         <div class="card" style="border-radius: 15px;">
