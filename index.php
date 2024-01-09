@@ -14,6 +14,9 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
             case 2:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/products/update_author.php';
                 break;
+            case 3:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/vendor/index.php';
+                break;
         }
     }
     include $dashboard_admin_path;
