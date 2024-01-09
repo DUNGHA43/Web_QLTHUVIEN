@@ -108,18 +108,6 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                     </div>
 
 
-                    <div class="form-group">
-                        <div>
-                            <div class="checkbox">
-                                <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for=" html">Nam</label>
-                                <a href=""></a>
-                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
-                                <label for="css">Nữ</label>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="form-group ">
                         <div class="d-flex">
                             <button type="submit" class="btn btn-success ml-auto" name="btn-ThemTG">Thêm</button>
