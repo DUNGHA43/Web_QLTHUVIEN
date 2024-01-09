@@ -1,8 +1,8 @@
 <?php
-    // Thừa kế file layout.php
-    $pageTitle = "document";
-    ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
-?> 
+// Thừa kế file layout.php
+$pageTitle = "document";
+ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
+?>
 <h1><span class="badge badge-secondary mb-5">Tài liệu</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
@@ -72,6 +72,8 @@
     </tbody>
 
 </table>
+
+
 <!-- Create -->
 <div id="Create" class="modal fade">
     <div class="modal-dialog" role="document">
@@ -110,16 +112,30 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label">Tác giả</label>
+                        <label class="control-label">Nhà cung cấp</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                            <!-- <input type="text" class="form-control input-lg" name="soDT" value=""> -->
+                            <select name="" id="" class='btn btn-light' style="width: 466px;">
+                                <OPTION Value="Under 16">Under 16</OPTION>
+                                <OPTION Value="16 to 25">16 to 25</OPTION>
+                                <OPTION Value="26 to 40">26 to 40</OPTION>
+                                <OPTION Value="40 to 60">40 to 60</OPTION>
+                                <OPTION Value="Over 60">Over 60</OPTION>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label">Nhà cung cấp</label>
                         <div>
-                            <input type="text" class="form-control input-lg" name="soDT" value="">
+                            <!-- <input type="text" class="form-control input-lg" name="soDT" value=""> -->
+                            <select name="" id="" class='btn btn-light' style="width: 466px;">
+                                <OPTION Value="Under 16">Under 16</OPTION>
+                                <OPTION Value="16 to 25">16 to 25</OPTION>
+                                <OPTION Value="26 to 40">26 to 40</OPTION>
+                                <OPTION Value="40 to 60">40 to 60</OPTION>
+                                <OPTION Value="Over 60">Over 60</OPTION>
+                            </select>
                         </div>
                     </div>
 
@@ -142,11 +158,10 @@
 </div><!-- /.modal -->
 <!-- End create  -->
 
-
 <?php
-    $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
+$content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
-    $htmlFilePath = ADMIN_PATH . 'layouts/default.php';
+$htmlFilePath = ADMIN_PATH . 'layouts/default.php';
 
-    include $htmlFilePath; // Thực hiện thừa kế
+include $htmlFilePath; // Thực hiện thừa kế
 ?>
