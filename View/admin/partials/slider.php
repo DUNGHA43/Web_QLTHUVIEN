@@ -8,6 +8,9 @@
             <li>
                 <a href="account_Controller.php?act=tacgia">Tác giả</a>
             </li>
+            <li>
+                <a href="account_Controller.php?act=tacgia">Nhà cung cấp</a>
+            </li>
 
             <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>

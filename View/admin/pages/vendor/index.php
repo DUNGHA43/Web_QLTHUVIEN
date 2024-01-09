@@ -1,37 +1,15 @@
 <?php
 // Thừa kế file layout.php
-$pageTitle = "Page Title";
+$pageTitle = "Vendor";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
-include "../Web_QLTHUVIEN/Model/Author_Model.php";
 ?>
-
-
-<form method="post" enctype="multipart/form-data" action="http://localhost/Web_QLTHUVIEN/config/process-form.php">
-    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
-    <label for="image">Image file</label>
-    <input type="file" id="image" name="image">
-    <button>Upload</button>
-</form>
-<h1><span class="badge badge-secondary mb-5">Sửa tên ở đây nè!</span></h1>
+<h1><span class="badge badge-secondary mb-5">Nhà cung cấp!</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
-        <div class="col-6">
-            <form action="path" method="POST" class="form-change-multi">
-                <div class="d-flex align-items-start">
-                    <div class="form-group">
-                        <select name="type" class="form-control">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="ids" value="" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Apply</button>
-                </div>
-            </form>
+        <div class="col-6 ">
+
         </div>
-        <div class="col-6">
+        <div class="col-6 mb-4">
             <form id="form-search" class="input-group" method="POST" action="author_Controller.php">
                 <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
                 <div class="input-group-append">
@@ -53,54 +31,38 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 <table class="table table-hover table-sm text-center" checkboxMulti>
     <thead>
         <tr>
-            <th>Mã tác giả</th>
-            <th>Tên tác giả</th>
-            <th>Ngày sinh</th>
-            <th>Nơi sinh</th>
+            <th>Mã nhà cung cấp</th>
+            <th>Tên nhà cung cấp</th>
             <th>Số điện thoại</th>
-            <th>Giới tính</th>
+            <th>Địa chỉ</th>
             <th>Lựa chọn</th>
         </tr>
     </thead>
-    <?php
-    $smTG = $_GET['value'];
-    if ($smTG == "") {
-        $result = show_Author();
-    } else
-        $result = show_Author_ByName($smTG);
-    while ($rows = mysqli_fetch_array($result)) {
-    ?>
-        <tbody>
-            <tr>
-                <td>
-                    <h6><?php echo $rows['maTG'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['tenTG'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['ngaySinh'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['noiSinh'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['soDT'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['gioiTinh'] ?></h6>
-                </td>
-                <td>
-                    <!--    -->
-                    <a href="author_Controller.php?act=updatetacgia&maTG=<?php echo $rows['maTG'] ?>" class="btn btn-warning">Sửa</a>
-                    <a onclick="return Del('<?php echo $rows['tenTG'] ?>')" href="author_Controller.php?act=deletetacgia&maTG=<?php echo $rows['maTG'] ?>" class="btn btn-danger">Xóa</a>
-                </td>
-            </tr>
+    <tbody>
+        <tr>
+            <td>
+                <h6>aaa</h6>
+            </td>
+            <td>
+                <h6>aaa</h6>
+            </td>
+            <td>
+                <h6>aaa</h6>
+            </td>
+            <td>
+                <h6>aaa</h6>
+            </td>
+            <td>
+                <a href="" class='btn btn-warning'>Sửa</a>
+                <a href="" class='btn btn-danger'>Xóa</a>
+
+            </td>
+        </tr>
 
 
-            <!-- End of product loop -->
-        </tbody>
-    <?php } ?>
+        <!-- End of product loop -->
+    </tbody>
+
 
     <script>
         function Del(name) {
@@ -113,33 +75,33 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
-                <h1 class="modal-title">Thêm tác giả</h1>
+                <h1 class="modal-title">Thêm nhà cung cấp</h1>
             </div>
             <div class="modal-body">
                 <form role="form" method="POST" action="author_Controller.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
-                        <label class="control-label">Tên tác giả</label>
+                        <label class="control-label">Mã nhà cung cấp</label>
                         <div>
                             <input type="text" class="form-control input-lg" name="tenTG" value="" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Ngày sinh</label>
+                        <label class="control-label">Tên nhà cung cấp</label>
                         <div>
-                            <input type="date" class="form-control input-lg" name="ngaySinh">
+                            <input type="text" class="form-control input-lg" name="ngaySinh">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label">Nơi sinh</label>
+                        <label class="control-label">Số điện thoại</label>
                         <div>
                             <input type="text" class="form-control input-lg" name="noiSinh" value="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label">SĐT</label>
+                        <label class="control-label">Địa chỉ</label>
                         <div>
                             <input type="number" class="form-control input-lg" name="soDT" value="">
                         </div>
@@ -169,6 +131,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- End create  -->
+
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
