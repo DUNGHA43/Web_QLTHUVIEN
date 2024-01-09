@@ -67,7 +67,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     if ($smTG == "") {
         $result = show_Author_All('tbltacgia');
     } else
-        $result = show_Author_ByName($smTG);
+        $result = show_Author_ByName('tbltacgia','tenTG',$smTG);
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>

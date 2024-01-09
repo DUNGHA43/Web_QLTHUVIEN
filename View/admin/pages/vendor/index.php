@@ -39,9 +39,13 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <th>Lựa chọn</th>
         </tr>
         <?php
-    $result = show_Author_All('tblnhacungcap');
-    while ($rows = mysqli_fetch_array($result)) {
-    ?>
+        $smTG = $_GET['value'];
+        if ($smTG == "") {
+            $result = show_Author_All('tblnhacungcap');
+        } else
+            $result = show_Author_ByName('tblnhacungcap','tenNCC',$smTG);
+        while ($rows = mysqli_fetch_array($result)) {
+        ?>
         <tbody>
             <tr>
                 <td>

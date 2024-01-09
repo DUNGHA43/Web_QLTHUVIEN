@@ -41,4 +41,10 @@ include '../Model/Author_Model.php';
         $_SESSION['slide_admin'] = 3;
         header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
     }
+
+    if (isset($_POST['btn_Search']) && ($_POST['btn_Search'])){
+        $valueSearch = $_POST['keyword'];
+        $_SESSION['slide_admin'] = 3;
+        header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch");
+    }
 ?>

@@ -57,10 +57,10 @@
         return $rs;
     }
 
-    function show_Author_ByName($value)
+    function show_Author_ByName($ten,$kc,$value)
     {
         $conn = connectSQL();
-        $sql = "SELECT * FROM `tbltacgia` WHERE `tenTG` LIKE '%$value%'";
+        $sql = "SELECT * FROM $ten WHERE $kc LIKE '%$value%'";
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
