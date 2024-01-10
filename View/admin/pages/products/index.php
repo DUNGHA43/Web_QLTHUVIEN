@@ -2,7 +2,7 @@
 // Thừa kế file layout.php
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
-include "../Web_QLTHUVIEN/Model/Author_Model.php";
+include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 ?>
 
 
@@ -65,9 +65,9 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
     <?php
     $smTG = $_GET['value'];
     if ($smTG == "") {
-        $result = show_Author_All('tbltacgia');
+        $result = show_Info_All('tbltacgia');
     } else
-        $result = show_Author_ByName($smTG);
+        $result = show_Infor_ByName($smTG, 'tbltacgia', 'tenTG');
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>

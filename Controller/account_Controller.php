@@ -122,7 +122,7 @@ if (isset($_GET['act'])) {
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'tailieu':
-            $_SESSION['slide_admin'] = 4;
+            $_SESSION['slide_admin'] = 5;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'thoat':

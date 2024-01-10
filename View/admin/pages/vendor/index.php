@@ -2,7 +2,7 @@
 // Thừa kế file layout.php
 $pageTitle = "Vendor";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
-include "../Web_QLTHUVIEN/Model/Author_Model.php";
+include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 ?>
 <h1><span class="badge badge-secondary mb-5">Nhà cung cấp!</span></h1>
 <div class="container-fluid mb-5">
@@ -39,7 +39,11 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
             <th>Lựa chọn</th>
         </tr>
         <?php
-    $result = show_Author_All('tblnhacungcap');
+    $smNCC = $_GET['value'];
+    if ($smNCC == "") {
+        $result = show_Info_All('tblnhacungcap');
+    } else{
+        $result = show_Infor_ByName($smNCC,'tblnhacungcap','tenNCC');}
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>

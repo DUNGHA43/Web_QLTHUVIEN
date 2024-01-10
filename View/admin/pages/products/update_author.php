@@ -4,7 +4,7 @@ $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra     
 
 include "../Web_QLTHUVIEN/Model/connect.php";    
-include "../Web_QLTHUVIEN/Model/Author_Model.php";    
+include "../Web_QLTHUVIEN/Model/CRUD_Model.php";    
 ?>
 <?php
     $smTG = $_GET['maTG'];

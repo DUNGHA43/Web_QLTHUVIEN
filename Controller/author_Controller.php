@@ -2,10 +2,10 @@
 session_start();
 ob_start();
 include "../Model/connect.php";
-include "../Model/Author_Model.php";
+include "../Model/CRUD_Model.php";
 
 if (isset($_POST['btn-ThemTG'])) {
-    $maTG = 'TG' . generateNewAuthor('tbltacgia', 'maTG');
+    $maTG = 'TG' . generateNew('tbltacgia', 'maTG');
     $tenTG = $_POST['tenTG'];
     $ngaySinh = $_POST['ngaySinh'];
     $noiSinh = $_POST['noiSinh'];
@@ -22,7 +22,7 @@ if (isset($_GET['act'])) {
     switch ($_GET['act']) {
         case 'deletetacgia':
             $smTG = $_GET['maTG'];
-            DeleteTacgia('tbltacgia','maTG',$smTG);
+            Delete('tbltacgia','maTG',$smTG);
             $_SESSION['slide_admin'] = 1;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
@@ -43,7 +43,7 @@ if (isset($_POST['btn-SuaTG']) && ($_POST['btn-SuaTG'])){
     $gioiTinh = $_POST['gioiTinh'];
     UpdateTacGia($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh);
     $_SESSION['slide_admin'] = 1;
-    header("location: http://localhost/Web_QLTHUVIEN/index.php");
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
 }
 
 if (isset($_POST['btn_Search']) && ($_POST['btn_Search'])){

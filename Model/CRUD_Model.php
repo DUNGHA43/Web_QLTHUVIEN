@@ -15,6 +15,17 @@
         }
     }
 
+    function UpdateTacGia($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh){
+        $conn = connectSQL();
+        $sql = "UPDATE `tbltacgia` SET `maTG`='$maTG',`tenTG`='$tenTG',`ngaySinh`='$ngaySinh',
+        `noiSinh`='$noiSinh',`soDT`='$soDT',`gioiTinh`='$gioiTinh' WHERE `maTG`='$maTG'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
     function add_NCC($maNCC, $tenNCC, $soDT, $diaChi)
     {
         $conn = connectSQL();
@@ -41,7 +52,7 @@
         }
     }
 
-    function show_Author_All($ten)
+    function show_Info_All($ten)
     {
         $conn = connectSQL();
         $sql = "SELECT * FROM $ten ";
@@ -49,25 +60,17 @@
         return $rs;
     }
 
-    function show_Author()
+    function show_Infor_ByName($value,$name,$row)
     {
         $conn = connectSQL();
-        $sql = "SELECT * FROM tbl ";
+        $sql = "SELECT * FROM `$name` WHERE `$row` LIKE '%$value%'";
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
 
-    function show_Author_ByName($value)
+    function generateNew($ten, $kc)
     {
-        $conn = connectSQL();
-        $sql = "SELECT * FROM `tbltacgia` WHERE `tenTG` LIKE '%$value%'";
-        $rs = mysqli_query($conn, $sql);
-        return $rs;
-    }
-
-    function generateNewAuthor($ten, $kc)
-    {
-        $addTG = show_Author_All($ten);
+        $addTG = show_Info_All($ten);
         $maTG = array();
         $arrMaTG = array();
         while($rows = $addTG->fetch_array())
@@ -97,10 +100,18 @@
         return $rs;
     }
 
-    function UpdateTacGia($maTG, $tenTG, $ngaySinh, $noiSinh, $soDT, $gioiTinh){
+    function getMaByTen($ma, $tentb, $dk, $ten){
         $conn = connectSQL();
-        $sql = "UPDATE `tbltacgia` SET `maTG`='$maTG',`tenTG`='$tenTG',`ngaySinh`='$ngaySinh',
-        `noiSinh`='$noiSinh',`soDT`='$soDT',`gioiTinh`='$gioiTinh' WHERE `maTG`='$maTG'";
+        $sql = "SELECT $ma FROM $tentb WHERE $dk ='".$ten."'";
+        $rs = mysqli_query($conn, $sql);
+        $kq = $rs->fetch_array();
+        return $kq[$ma];
+    }
+    
+
+    function Delete($ten,$kc, $maTG){
+        $conn = connectSQL();
+        $sql = "DELETE FROM $ten WHERE $kc ='$maTG'";
         if (mysqli_query($conn, $sql)) {
             return true;
         } else {
@@ -108,11 +119,24 @@
         }
     }
 
-    
-
-    function DeleteTacgia($ten,$kc, $maTG){
+    function addDocument($maTL, $tenTL, $soLuong, $theLoai, $maTG, $maNCC, $hinhAnh, $ngayThem, $moTa)
+    {
         $conn = connectSQL();
-        $sql = "DELETE FROM $ten WHERE $kc ='$maTG'";
+        $sql = "INSERT INTO tbltailieu VALUES ('$maTL','$tenTL','$soLuong','$theLoai','$maTG','$maNCC','$hinhAnh','$ngayThem','$moTa')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function UpdateDocument($maTL, $tenTL, $soLuong, $theLoai, $maTG, $maNCC, $hinhAnh, $ngayThem, $moTa){
+        $conn = connectSQL();
+        $sql = "UPDATE tbltailieu SET tenTaiLieu = '$tenTL', soLuong = '$soLuong', maTL = '$theLoai', maTG = '$maTG', maNCC = '$maNCC', hinhAnh = '$hinhAnh', ngayThem = '$ngayThem', moTa = '$moTa' WHERE maTaiLieu = '$maTL'";
         if (mysqli_query($conn, $sql)) {
             return true;
         } else {
