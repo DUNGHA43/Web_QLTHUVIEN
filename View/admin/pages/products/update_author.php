@@ -8,7 +8,7 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
 ?>
 <?php
     $smTG = $_GET['maTG'];
-    $rs = getTG($smTG);
+    $rs = getTG('tbltacgia','maTG',$smTG);
     $udTG = mysqli_fetch_array($rs);
 ?>
     
