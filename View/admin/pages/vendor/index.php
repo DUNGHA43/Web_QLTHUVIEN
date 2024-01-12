@@ -43,41 +43,41 @@ include "../Web_QLTHUVIEN/Model/Author_Model.php";
         if ($smTG == "") {
             $result = show_Author_All('tblnhacungcap');
         } else
-            $result = show_Author_ByName('tblnhacungcap','tenNCC',$smTG);
+            $result = show_Author_ByName('tblnhacungcap', 'tenNCC', $smTG);
         while ($rows = mysqli_fetch_array($result)) {
         ?>
-        <tbody>
-            <tr>
-                <td>
-                    <h6><?php echo $rows['maNCC'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['tenNCC'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['soDT'] ?></h6>
-                </td>
-                <td>
-                    <h6><?php echo $rows['diaChi'] ?></h6>
-                </td>
-                <td>
-                    <!--    -->
-                    <a href="nhacungcap_Controller.php?act=updatencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-warning">Sửa</a>
-                    <a  onclick="return Del('<?php echo $rows['maNCC'] ?>')" href="nhacungcap_Controller.php?act=deletencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-danger">Xóa</a>
-                </td>
-            </tr>
+    <tbody>
+        <tr>
+            <td>
+                <h6><?php echo $rows['maNCC'] ?></h6>
+            </td>
+            <td>
+                <h6><?php echo $rows['tenNCC'] ?></h6>
+            </td>
+            <td>
+                <h6><?php echo $rows['soDT'] ?></h6>
+            </td>
+            <td>
+                <h6><?php echo $rows['diaChi'] ?></h6>
+            </td>
+            <td>
+                <!--    -->
+                <a href="nhacungcap_Controller.php?act=updatencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-warning">Sửa</a>
+                <a onclick="return Del('<?php echo $rows['maNCC'] ?>')" href="nhacungcap_Controller.php?act=deletencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
 
 
-            <!-- End of product loop -->
-        </tbody>
-    <?php } ?>    
+        <!-- End of product loop -->
+    </tbody>
+<?php } ?>
 
 
-    <script>
-        function Del(name) {
-            return confirm("Bạn có muốn xóa tác giả : " + name + "?");
-        }
-    </script>
+<script>
+    function Del(name) {
+        return confirm("Bạn có muốn xóa tác giả : " + name + "?");
+    }
+</script>
 </table>
 <!-- Create -->
 <div id="Create" class="modal fade">

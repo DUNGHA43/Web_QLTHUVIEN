@@ -39,9 +39,6 @@
                         <!-- <input type="text" class="form-control input-lg" name="soDT" value=""> -->
                         <select name="" id="" class='btn btn-light' style="width: 466px;">
                             <OPTION Value="Under 16">Under 16</OPTION>
-                            <OPTION Value="16 to 25">16 to 25</OPTION>
-                            <OPTION Value="26 to 40">26 to 40</OPTION>
-                            <OPTION Value="40 to 60">40 to 60</OPTION>
                             <OPTION Value="Over 60">Over 60</OPTION>
                         </select>
                     </div>
@@ -81,3 +78,6 @@
         </div>
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
+<OPTION Value="16 to 25">16 to 25</OPTION>
+<OPTION Value="26 to 40">26 to 40</OPTION>
+<OPTION Value="40 to 60">40 to 60</OPTION>
