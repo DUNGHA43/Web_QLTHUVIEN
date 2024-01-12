@@ -17,10 +17,10 @@
 
             <!-- new  -->
             <li>
-                <a href="">Thể loại</a>
+                <a href="account_Controller.php?act=theloai">Thể loại</a>
             </li>
             <li>
-                <a href="">Tài khoản</a>
+                <a href="account_Controller.php?act=taikhoan">Tài khoản</a>
             </li>
 
             <!-- end new  -->

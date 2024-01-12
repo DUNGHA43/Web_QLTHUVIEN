@@ -41,6 +41,32 @@
         }
     }
 
+
+    function add_theloai($maTL, $tenTL)
+    {
+        $conn = connectSQL();
+        $sql = "INSERT INTO tbltheloai VALUES ('$maTL','$tenTL')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function UpdateTL($maTL, $tenTL){
+        $conn = connectSQL();
+        $sql = "UPDATE `tbltheloai` SET `maTL`='$maTL',`tenTL`='$tenTL' where `maTL`='$maTL'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
     function show_Author_All($ten)
     {
         $conn = connectSQL();
