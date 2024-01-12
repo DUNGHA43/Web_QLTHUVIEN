@@ -15,6 +15,12 @@
                 <a href="account_Controller.php?act=tailieu">Tài Liệu</a>
             </li>
             <li>
+                <a href="account_Controller.php?act=theloai">Thể loại</a>
+            </li>
+            <li>
+                <a href="account_Controller.php?act=taikhoan">Tài khoản</a>
+            </li>
+            <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>
             </li>
         </ul>
