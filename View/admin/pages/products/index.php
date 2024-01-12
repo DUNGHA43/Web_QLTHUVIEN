@@ -149,8 +149,8 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                     <div class="form-group">
                         <div>
                             <div class="checkbox">
-                                <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for=" html">Nam</label>
+                                <input type="radio" id="css" name="gioiTinh" value="Nam">
+                                <label for=" css">Nam</label>
                                 <a href=""></a>
                                 <input type="radio" id="css" name="gioiTinh" value="Nữ">
                                 <label for="css">Nữ</label>

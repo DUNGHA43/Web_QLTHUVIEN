@@ -4,14 +4,14 @@ $pageTitle = "Vendor";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 ?>
-<h1><span class="badge badge-secondary mb-5">Thể loại</span></h1>
+<h1><span class="badge badge-secondary mb-5">Tài Khoản</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-6 ">
 
         </div>
         <div class="col-6 mb-4">
-            <form id="form-search" class="input-group" method="POST" action="nhacungcap_Controller.php">
+            <form id="form-search" class="input-group" method="POST" action="account_Controller.php">
                 <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
                 <div class="input-group-append">
                     <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
@@ -40,176 +40,224 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
             <th>Số CCCD</th>
             <th>Số ĐT</th>
             <th>Email</th>
+            <th>Giới tính</th>
             <th>Địa chỉ</th>
+            <th>Ảnh</th>
             <th>Quyền</th>
             <th>Action</th>
 
         </tr>
 
+        <?php
+        $smTG = $_GET['value'];
+        if ($smTG == "") {
+            $result = show_Info_All('tbltaikhoan');
+        } else
+            $result = show_Infor_ByName('tbltaikhoan', 'hoTen', $smTG);
+        while ($rows = mysqli_fetch_array($result)) {
+        ?>
     <tbody>
         <tr>
             <td>
-                <h6>
-                    admin
-                </h6>
+                <h6><?php echo $rows['taiKhoan'] ?></h6>
             </td>
             <td>
-                <h6>
-                    123
-                </h6>
+                <h6><?php echo $rows['matKhau'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    MASV
-                </h6>
+                <h6><?php echo $rows['maSV'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    Trần Vũ Hoàng
-                </h6>
+                <h6><?php echo $rows['hoTen'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    25/02/2003
-                </h6>
+                <h6><?php echo $rows['ngaySinh'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    0989289777777
-                </h6>
+                <h6><?php echo $rows['soCCCD'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    037203000895
-                </h6>
+                <h6><?php echo $rows['soDT'] ?></h6>
             </td>
-
-
             <td>
-                <h6>
-                    Email@gmail.com
-                </h6>
+                <h6><?php echo $rows['email'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    Hà Nội
-                </h6>
+                <h6><?php echo $rows['gioiTinh'] ?></h6>
             </td>
-
             <td>
-                <h6>
-                    Quyền
-                </h6>
+                <h6><?php echo $rows['diaChi'] ?></h6>
+            </td>
+            <td>
+                <h6 style="padding-top: 5px;"><img src="http://localhost/Web_QLTHUVIEN/public/client/image/<?php echo $rows['anhTaiKhoan'] ?>" style="width: 50px; height: 50px;" alt=""></h6>
+            </td>
+            <td>
+                <h6><?php echo $rows['maQuyen'] ?></h6>
             </td>
             <td>
                 <!--    -->
-                <a href="nhacungcap_Controller.php?act=updatencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-warning">Sửa</a>
-                <a href="nhacungcap_Controller.php?act=deletencc&maNCC=<?php echo $rows['maNCC'] ?>" class="btn btn-danger">Xóa</a>
+                <a href="account_Controller.php?act=updateTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-warning">Sửa</a>
+                <a onclick="return Del('<?php echo $rows['taiKhoan'] ?>')" href="account_Controller.php?act=deleteTaiKhoan&maTL=<?php echo $rows['taiKhoan'] ?>" class="btn btn-danger">Xóa</a>
             </td>
         </tr>
 
 
         <!-- End of product loop -->
-
-        <div id="Create" class="modal fade">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title">Thêm thể loại</h1>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form" method="POST" action="nhacungcap_Controller.php">
-                            <input type="hidden" name="_token" value="">
-                            <div class="form-group">
-                                <label class="control-label">Tài khoản</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="taiKhoan">
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="control-label">Mật khẩu</label>
-                                <div>
-                                    <input type="password" class="form-control input-lg" name="matKhau">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Mã SV</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="maSV">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Họ tên</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="hoTen">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Ngày sinh</label>
-                                <div>
-                                    <input type="date" class="form-control input-lg" name="ngaySinh">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Số CCCD</label>
-                                <div>
-                                    <input type="number" class="form-control input-lg" name="soCCCD">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Số điện thoại</label>
-                                <div>
-                                    <input type="number" class="form-control input-lg" name="soDienThoai">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Email</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="email">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Địa chỉ</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="diaChi">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Quyền</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="quyen">
-                                </div>
-                            </div>
-
-
-                            <div class="form-group ">
-                                <div class="d-flex">
-                                    <button type="submit" class="btn btn-success ml-auto" name="btn-ThemNCC">Thêm</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <!-- End create  -->
     </tbody>
+<?php } ?>
+
+<script>
+    function Del(name) {
+        return confirm("Bạn có muốn xóa tác giả : " + name + "?");
+    }
+</script>
+
+
+<!-- End of product loop -->
+
+<div id="Create" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Thêm thể loại</h1>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="POST" action="account_Controller.php">
+                    <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">Tài khoản</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="taiKhoan">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label">Mật khẩu</label>
+                        <div>
+                            <input type="password" class="form-control input-lg" name="matKhau">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Mã SV</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="maSV">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Họ tên</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="hoTen">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Ngày sinh</label>
+                        <div>
+                            <input type="date" class="form-control input-lg" name="ngaySinh">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Số CCCD</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="soCCCD">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Số điện thoại</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="soDienThoai">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Giới tính</label>
+                        <div>
+                            <div class="checkbox">
+                                <input type="radio" id="css" name="gioiTinh" value="Nam">
+                                <label for=" html">Nam</label>
+                                <a href=""></a>
+                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
+                                <label for="css">Nữ</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Địa chỉ</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="diaChi">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hinhAnh" class="control-label">Hình ảnh</label>
+                        <div>
+                                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="1048576"> -->
+                                <label for="image">Image file</label>
+                                <input type="file" id="image" name="image" onchange="getFileName()">
+                                <input type="hidden" id="output" name="outputNameIMG">
+                                <script>  
+                                    function getFileName() {
+                                        // Lấy thẻ input file
+                                        var input = document.getElementById('image');
+
+                                        // Kiểm tra xem đã chọn file hay chưa
+                                        if (input.files.length > 0) {
+                                            // Lấy tên của file
+                                            var fileName = input.files[0].name;
+                                            var outputInput = document.getElementById('output');
+                                            outputInput.value = fileName;
+                                            // Hiển thị tên của file (hoặc bạn có thể thực hiện bất kỳ hành động nào khác với tên file)
+                                        }
+                                    }
+                                </script>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Quyền</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="quyen">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <div class="d-flex">
+                            <button type="submit" class="btn btn-success ml-auto" name="btn-ThemTaiKhoan">Thêm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End create  -->
+</tbody>
+
+<script src="../../../../Web_QLTHUVIEN/config/validator.js"></script>
+<script>
+validator({
+  form: '#form_themTL',
+  errorSelector: '.form-message',
+  rules: [
+    validator.isRequired('#tenTL'),
+    validator.isRequired('#soLuong'),
+  ]
+});
+</script>
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
