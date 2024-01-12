@@ -14,6 +14,18 @@
             <li>
                 <a href="account_Controller.php?act=tailieu">Tài Liệu</a>
             </li>
+
+            <!-- new  -->
+            <li>
+                <a href="">Thể loại</a>
+            </li>
+            <li>
+                <a href="">Tài khoản</a>
+            </li>
+
+            <!-- end new  -->
+
+
             <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>
             </li>
