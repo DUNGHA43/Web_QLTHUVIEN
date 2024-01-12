@@ -119,24 +119,24 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-content">
             <div class="modal-header">
-                <h1 class="modal-title">Thêm thể loại</h1>
+                <h1 class="modal-title">Thêm tài khoản</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="account_Controller.php">
+                <form role="form" method="POST" enctype="multipart/form-data" action="account_Controller.php" id="form1">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
-                        <label class="control-label">Tài khoản</label>
-                        <div>
-                            <input type="text" class="form-control input-lg" name="taiKhoan">
-                        </div>
+                        <label for="taikhoan" class="control-label">Tài khoản</label>
+                        <input id="taikhoan" type="text" class="form-control input-lg" name="taiKhoan" value="">
+                        <span class="form-message invalid"></span>  
                     </div>
 
 
                     <div class="form-group">
-                        <label class="control-label">Mật khẩu</label>
+                        <label for="matkhau" class="control-label">Mật khẩu</label>
                         <div>
-                            <input type="password" class="form-control input-lg" name="matKhau">
+                            <input id="matkhau" type="password" class="form-control input-lg" name="matKhau">
                         </div>
+                        <span class="form-message invalid"></span>  
                     </div>
 
                     <div class="form-group">
@@ -250,11 +250,11 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 <script src="../../../../Web_QLTHUVIEN/config/validator.js"></script>
 <script>
 validator({
-  form: '#form_themTL',
+  form: '#form1',
   errorSelector: '.form-message',
   rules: [
-    validator.isRequired('#tenTL'),
-    validator.isRequired('#soLuong'),
+    validator.isRequired('#taikhoan'),
+    validator.isRequired('#matkhau'),
   ]
 });
 </script>
