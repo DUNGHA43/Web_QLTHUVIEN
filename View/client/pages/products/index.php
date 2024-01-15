@@ -35,7 +35,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             ?>
                 <div class="col-3" style="padding-top: 20px;">
                     <div class="card" style="width: 18rem;">
-                        <img src="public/client/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top rounded mx-auto d-block" alt="...">
+                        <img src="public/client/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="..." style=" height: 300px;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
                             <p class="card-text"><?php echo $rows['moTa'] ?></p>
@@ -64,7 +64,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                 ?>
                     <div class="col-3" style="padding-top: 20px;">
                         <div class="card" style="width: 18rem;">
-                            <img src="public/client/image/<?php echo $rowsDCM['hinhAnh'] ?>" class="card-img-top rounded mx-auto d-block" alt="...">
+                            <img src="public/client/image/<?php echo $rowsDCM['hinhAnh'] ?>" class="card-img-top" alt="..." style=" height: 300px;">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu'] ?></h5>
                                 <p class="card-text"><?php echo $rowsDCM['moTa'] ?></p>
