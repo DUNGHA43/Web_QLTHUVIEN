@@ -19,10 +19,10 @@
         $conn = null;
     }
 
-    function updateAccount($maSV, $hoTen, $ngaySinh, $gioiTinh, $soDT, $email, $cccd, $diaChi, $img, $taiKhoan)
+    function updateAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan,$maquyen)
     {
         $conn = connectSQL();
-        $sql = "UPDATE tbltaikhoan SET maSV = '$maSV' , hoTen = '$hoTen' , ngaySinh = '$ngaySinh', soCCCD = '$cccd' , soDT = '$soDT', email = '$email', gioiTinh = '$gioiTinh', diaChi = '$diaChi', anhTaiKhoan = '$img' WHERE taiKhoan = '$taiKhoan'";
+        $sql = "UPDATE tbltaikhoan SET maSV = '$maSV' , hoTen = '$hoTen' , ngaySinh = '$ngaySinh', soCCCD = '$soCCCD' , soDT = '$soDT', email = '$email', gioiTinh = '$gioiTinh', diaChi = '$diaChi', anhTaiKhoan = '$anhTaiKhoan' WHERE taiKhoan = '$taiKhoan'";
         $rs = mysqli_query($conn, $sql);
         if($rs > 0)
         {
@@ -33,6 +33,16 @@
             return false;
         }
         
+    }
+
+    function Delete($ten,$kc, $maTG){
+        $conn = connectSQL();
+        $sql = "DELETE FROM $ten WHERE $kc ='$maTG'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
     }
 
     function getUserInfo($taiKhoan, $matKhau)
