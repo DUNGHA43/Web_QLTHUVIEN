@@ -58,8 +58,8 @@ $tmpimg;
             <input type="date" class="form-control" placeholder="Nhập số điện thoại" aria-label="name" aria-describedby="basic-addon1" name="ngaysinh" value="<?php echo $row['ngaySinh']; ?>">
             <span class="input-group-text" id="basic-addon1" style="margin-right: 20px; margin-left: 10px;">Giới tính</span>
             <label class="form-check-label" style="margin-right: 1%; margin-top: 1%;"> 
-                <input type="radio" name="gender" value="male" class="form-check-input" <?php if($row["gioiTinh"] == "male"){?>checked<?php }?>> Nam
-                <input type="radio" name="gender" value="female" class="form-check-input" <?php if($row["gioiTinh"] == "female"){?>checked<?php }?>> Nữ
+                <input type="radio" name="gender" value="male" class="form-check-input" <?php if($row["gioiTinh"] == "Nam"){?>checked<?php }?>> Nam
+                <input type="radio" name="gender" value="female" class="form-check-input" <?php if($row["gioiTinh"] == "Nữ"){?>checked<?php }?>> Nữ
             </label>
             </div>
             <div class="input-group mb-3">

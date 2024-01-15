@@ -33,11 +33,11 @@
                         <label for="">Giới tính</label>
                         <div>
                             <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" name="gender" checked id="male" value="male">
+                                <input type="radio" class="form-check-input" name="gender" checked id="male" value="Nam">
                                 <label for="male" class="form-check-label">Nam</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" name="gender" checked id="female" value="female">
+                                <input type="radio" class="form-check-input" name="gender" checked id="female" value="Nữ">
                                 <label for="female" class="form-check-label">Nữ</label>
                             </div>
                         </div>

@@ -53,7 +53,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
         if ($smTG == "") {
             $result = show_Info_All('tbltaikhoan');
         } else
-            $result = show_Infor_ByName('tbltaikhoan', 'hoTen', $smTG);
+            $result = show_Infor_ByName($smTG,'tbltaikhoan', 'hoTen');
         while ($rows = mysqli_fetch_array($result)) {
         ?>
     <tbody>
@@ -97,7 +97,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
             <td>
                 <!--    -->
                 <a href="account_Controller.php?act=updateTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-warning">Sửa</a>
-                <a onclick="return Del('<?php echo $rows['taiKhoan'] ?>')" href="account_Controller.php?act=deleteTaiKhoan&maTL=<?php echo $rows['taiKhoan'] ?>" class="btn btn-danger">Xóa</a>
+                <a onclick="return Del('<?php echo $rows['taiKhoan'] ?>')" href="account_Controller.php?act=deleteTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-danger">Xóa</a>
             </td>
         </tr>
 
@@ -122,7 +122,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                 <h1 class="modal-title">Thêm thể loại</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" action="account_Controller.php">
+                <form role="form" method="POST" enctype="multipart/form-data" action="account_Controller.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
                         <label class="control-label">Tài khoản</label>
