@@ -21,8 +21,8 @@
   </div>
   </form>
   <form class="d-flex" action="" style="width: 500px;">
-        <input class="form-control me-2" type="search" placeholder="Nhập tên tài liệu" aria-label="Search">
-        <button class="btn btn-outline-success bg-secondary text bg-gradient" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Nhập tên tài liệu" aria-label="Search" style="width: 80%;">
+        <button class="btn btn-outline-success bg-secondary text bg-gradient" type="submit">Tìm kiếm</button>
   </form>
   <form class="form-inline">
     <!-- Example split danger button -->
