@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light " style="padding: 15px 40px;">
+<nav class="navbar navbar-light bg-light fixed-top" style="padding: 15px 40px; height: 80px;">
   <form class="form-inline form-infor">
     <a class="navbar-brand a" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
     <a class="navbar-brand">Về chúng tôi</a>

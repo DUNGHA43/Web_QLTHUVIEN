@@ -8,7 +8,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 <div class="container-fluid">
     <div class="container header d-flex justify-content-center">
         <div class="row w-75 mt-5">
-            <div class="input-group ">
+            <div class="input-group" style="margin-top: 5%;">
                 <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
