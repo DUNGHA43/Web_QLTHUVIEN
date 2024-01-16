@@ -7,7 +7,7 @@
       <!--Grid row-->
       <div class="row mt-4" >
         <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+        <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
   
           <p>
@@ -23,9 +23,9 @@
         <!--Grid column-->
   
         <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-  
-          <ul class="fa-ul" style="margin-left: 1.65em;">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4" style="margin-left: 3%;">Contact</h5>
+          <ul class="fa-ul">
             <li class="mb-3">
               <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
             </li>
