@@ -10,23 +10,10 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 <h1><span class="badge badge-secondary mb-5">Danh sách tác giả</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
-        <div class="col-6">
-            <form action="path" method="POST" class="form-change-multi">
-                <div class="d-flex align-items-start">
-                    <div class="form-group">
-                        <select name="type" class="form-control">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="ids" value="" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Apply</button>
-                </div>
-            </form>
+        <div class="col-6 ">
+
         </div>
-        <div class="col-6">
+        <div class="col-6 mb-4">
             <form id="form-search" class="input-group" method="POST" action="author_Controller.php">
                 <input type="text" placeholder="Nhập tên tác giả cần tìm!" name="keyword" class="form-control" />
                 <div class="input-group-append">
