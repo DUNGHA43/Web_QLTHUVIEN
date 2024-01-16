@@ -5,7 +5,7 @@ include $dataFile;
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 ?>
-<div class="container-fluid">
+<div class="container-fluid bg-light.bg-gradient">
     <div class="container header d-flex justify-content-center">
         <div class="row w-75 mt-5">
             <div class="input-group" style="margin-top: 5%;">
@@ -41,7 +41,8 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             ?>
         </div>
     </div>
-</div>
+
+
     <?php
     $cGR = showCGR();
     while ($rowsCGR = $cGR->fetch_assoc()) {
@@ -72,6 +73,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

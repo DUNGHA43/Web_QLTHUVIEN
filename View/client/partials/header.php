@@ -1,8 +1,8 @@
-<nav class="navbar navbar-light bg-light fixed-top" style="padding: 15px 40px; height: 80px;">
+<nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px;">
   <form class="form-inline form-infor">
-    <a class="navbar-brand a" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
-    <a class="navbar-brand">Về chúng tôi</a>
-    <a class="navbar-brand">Mượn sách</a>
+    <a class="navbar-brand a text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
+    <a class="navbar-brand text-white">Về chúng tôi</a>
+    <a class="navbar-brand text-white">Mượn sách</a>
   </form>
   <form class="form-inline">
     <!-- Example split danger button -->
@@ -10,17 +10,17 @@
     <!-- Example single danger button -->
     
     <?php if (isset($_SESSION['taikhoan']) && isset($_SESSION['hoTen']) && isset($_SESSION['img']) && ($_SESSION['hoTen'] != "")) {
-      echo '<div class="dropdown ">
+      echo '<div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle buttonDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
       <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'. $_SESSION['hoTen'] . '</span>
       <img src="public/client/image/'.$_SESSION['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
-      <div class="dropdown-menu">
-        <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung">Thông tin cá nhân</a>
-        <button class="navbar-brand dropdown-item" type="button" data-toggle="modal" data-target="#updateinfo" style="font-size: 16px;">
+      <div class="dropdown-menu bg-secondary bg-gradient">
+        <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung">Thông tin cá nhân</a>
+        <button class="navbar-brand dropdown-item text-white" type="button" data-toggle="modal" data-target="#updateinfo" style="font-size: 16px;">
         Đổi mật khẩu
         </button>
-        <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
+        <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     }
@@ -31,11 +31,11 @@
       <img src="public/client/image/'.$_COOKIE['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
       <div class="dropdown-menu">    
-      <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
-      <button class="navbar-brand dropdown-item" type="button" data-toggle="modal" data-target="#update" style="font-size: 16px;">
+      <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
+      <button class="navbar-brand dropdown-item text-white" type="button" data-toggle="modal" data-target="#update" style="font-size: 16px;">
         Đổi mật khẩu
       </button>
-      <a class="navbar-brand dropdown-item" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
+      <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     } 
