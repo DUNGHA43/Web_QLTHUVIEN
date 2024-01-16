@@ -41,6 +41,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             ?>
         </div>
     </div>
+</div>
     <?php
     $cGR = showCGR();
     while ($rowsCGR = $cGR->fetch_assoc()) {
@@ -70,8 +71,10 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             } ?>
             </div>
         </div>
+    </div>
 </div>
-
+</div>
+</div>
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
