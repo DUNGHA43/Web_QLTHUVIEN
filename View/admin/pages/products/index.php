@@ -7,7 +7,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 
 
 
-<h1><span class="badge badge-secondary mb-5">Sửa tên ở đây nè!</span></h1>
+<h1><span class="badge badge-secondary mb-5">Danh sách tác giả</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-6">
@@ -28,9 +28,9 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
         </div>
         <div class="col-6">
             <form id="form-search" class="input-group" method="POST" action="author_Controller.php">
-                <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
+                <input type="text" placeholder="Nhập tên tác giả cần tìm!" name="keyword" class="form-control" />
                 <div class="input-group-append">
-                    <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
+                    <input name="btn_Search" class="btn btn-success" type="submit" value="Tìm kiếm"></input>
                 </div>
             </form>
         </div>

@@ -13,7 +13,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 <div class="modal-dialog" role="document">
     <div class="modal-content modal-content">
         <div class="modal-header">
-            <h1 class="modal-title">Sửa tài khoản</h1>
+            <h1 class="modal-title">Sửa thông tin tài khoản</h1>
         </div>
         <div class="modal-body">
             <form role="form" method="POST" enctype="multipart/form-data" action="account_Controller.php">

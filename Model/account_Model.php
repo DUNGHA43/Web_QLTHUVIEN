@@ -19,7 +19,7 @@
         $conn = null;
     }
 
-    function updateAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan,$maquyen)
+    function updateAccount($taiKhoan, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan,$maquyen)
     {
         $conn = connectSQL();
         $sql = "UPDATE tbltaikhoan SET maSV = '$maSV' , hoTen = '$hoTen' , ngaySinh = '$ngaySinh', soCCCD = '$soCCCD' , soDT = '$soDT', email = '$email', gioiTinh = '$gioiTinh', diaChi = '$diaChi', anhTaiKhoan = '$anhTaiKhoan' WHERE taiKhoan = '$taiKhoan'";

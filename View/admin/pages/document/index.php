@@ -4,7 +4,7 @@ $pageTitle = "document";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 ?>
-<h1><span class="badge badge-secondary mb-5">Tài liệu</span></h1>
+<h1><span class="badge badge-secondary mb-5">Danh sách tài liệu</span></h1>
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-6 ">
@@ -14,7 +14,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
             <form id="form-search" class="input-group" method="POST" action="tailieu_Controller.php">
                 <input type="text" placeholder="Nhập tên tài liệu cần tìm!" name="keyword" class="form-control" />
                 <div class="input-group-append">
-                    <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
+                    <input name="btn_Search" class="btn btn-success" type="submit" value="Tìm kiếm"></input>
                 </div>
             </form>
         </div>

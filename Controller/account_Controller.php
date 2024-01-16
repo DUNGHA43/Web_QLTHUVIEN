@@ -152,7 +152,8 @@ if (isset($_POST['btn-SuaTaiKhoan'])) {
     $diaChi =  $_POST['diaChi'];
     $anhTaiKhoan = $_POST['outputNameIMG'];
     $maquyen =  $_POST['quyen'];
-    updateAccount($taiKhoan, $matKhau, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan, $maquyen);
+    updateAccount($taiKhoan, $maSV, $hoTen, $ngaySinh, $soCCCD, $soDT, $email, $gioiTinh, $diaChi, $anhTaiKhoan, $maquyen);
+    changePass($taiKhoan, $matKhau);
     $_SESSION['slide_admin'] = 9;
     header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
 } else {

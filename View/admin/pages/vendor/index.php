@@ -12,9 +12,9 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
         </div>
         <div class="col-6 mb-4">
             <form id="form-search" class="input-group" method="POST" action="nhacungcap_Controller.php">
-                <input type="text" placeholder="Input here!" name="keyword" class="form-control" />
+                <input type="text" placeholder="Nhập tên nhà cung cấp cần tìm!" name="keyword" class="form-control" />
                 <div class="input-group-append">
-                    <input name="btn_Search" class="btn btn-success" type="submit" value="Search"></input>
+                    <input name="btn_Search" class="btn btn-success" type="submit" value="Tìm kiếm"></input>
                 </div>
             </form>
         </div>
