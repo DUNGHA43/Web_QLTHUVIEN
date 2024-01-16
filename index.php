@@ -41,6 +41,9 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
             case 11:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/library_card/index.php';
                 break;
+            case 12:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/library_card/edit.php';
+                break;  
         }
     }
     include $dashboard_admin_path;

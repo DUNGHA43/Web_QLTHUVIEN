@@ -59,45 +59,45 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
     <tbody>
         <tr>
             <td>
-                <h6><?php echo $rows['taiKhoan'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['taiKhoan'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['matKhau'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['matKhau'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['maSV'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['maSV'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['hoTen'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['hoTen'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['ngaySinh'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['ngaySinh'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['soCCCD'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['soCCCD'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['soDT'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['soDT'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['email'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['email'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['gioiTinh'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['gioiTinh'] ?></h6>
             </td>
             <td>
-                <h6><?php echo $rows['diaChi'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['diaChi'] ?></h6>
             </td>
             <td>
                 <h6 style="padding-top: 5px;"><img src="http://localhost/Web_QLTHUVIEN/public/client/image/<?php echo $rows['anhTaiKhoan'] ?>" style="width: 50px; height: 50px;" alt=""></h6>
             </td>
             <td>
-                <h6><?php echo $rows['maQuyen'] ?></h6>
+                <h6 style="padding-top: 15px;"><?php echo $rows['maQuyen'] ?></h6>
             </td>
             <td>
                 <!--    -->
-                <a href="account_Controller.php?act=updateTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-warning">Sửa</a>
-                <a onclick="return Del('<?php echo $rows['taiKhoan'] ?>')" href="account_Controller.php?act=deleteTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-danger">Xóa</a>
+                <a href="account_Controller.php?act=updateTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-warning" style="margin-top: 10px;">Sửa</a>
+                <a onclick="return Del('<?php echo $rows['taiKhoan'] ?>')" href="account_Controller.php?act=deleteTaiKhoan&maTK=<?php echo $rows['taiKhoan'] ?>" class="btn btn-danger" style="margin-top: 10px;">Xóa</a>
             </td>
         </tr>
 

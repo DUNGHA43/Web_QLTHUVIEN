@@ -9,10 +9,6 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
     <div class="container header d-flex justify-content-center">
         <div class="row w-75 mt-5">
             <div class="input-group" style="margin-top: 5%;">
-                <input type="text" class="form-control" placeholder="Nhập tên tài liệu ..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                <div class="input-group-append" style="margin-left: 1%;">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Tìm kiếm</button>
-                </div>
             </div>
         </div>
     </div>
@@ -33,7 +29,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
                             <p class="card-text"><?php echo $rows['moTa'] ?></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="#" class="btn btn-primary">Mượn ngay!</a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +60,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu'] ?></h5>
                                 <p class="card-text"><?php echo $rowsDCM['moTa'] ?></p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <a href="#" class="btn btn-primary">Mượn ngay!</a>
                             </div>
                         </div>
                     </div>

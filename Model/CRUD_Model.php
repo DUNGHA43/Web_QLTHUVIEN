@@ -167,4 +167,29 @@
             echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
+    function addLibraryCard($maTTV, $taiKhoan, $ngayHH, $soLanVP, $trangThai, $ghiChu)
+    {
+        $conn = connectSQL();
+        $sql = "INSERT INTO tblthethuvien VALUES ('$maTTV','$taiKhoan','$ngayHH','$soLanVP','$trangThai','$ghiChu')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function updateLibraryCard($maTTV, $ngayHH, $soLanVP, $trangThai, $ghiChu)
+    {
+        $conn = connectSQL();
+        $sql = "UPDATE tblthethuvien SET ngayHetHan = '$ngayHH', soLanVP = '$soLanVP', trangThai = '$trangThai', ghiChu = '$ghiChu' WHERE maTheTV = '$maTTV'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
 ?>

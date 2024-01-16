@@ -55,22 +55,22 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
         <tbody>
             <tr>
                 <td>
-                    <h6><?php echo $rows['maTG'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['maTG'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['tenTG'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['tenTG'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['ngaySinh'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['ngaySinh'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['noiSinh'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['noiSinh'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['soDT'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['soDT'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['gioiTinh'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['gioiTinh'] ?></h6>
                 </td>
                 <td>
                     <!--    -->

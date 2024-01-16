@@ -49,16 +49,16 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
         <tbody>
             <tr>
                 <td>
-                    <h6><?php echo $rows['maNCC'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['maNCC'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['tenNCC'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['tenNCC'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['soDT'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['soDT'] ?></h6>
                 </td>
                 <td>
-                    <h6><?php echo $rows['diaChi'] ?></h6>
+                    <h6 style="padding-top: 10px;"><?php echo $rows['diaChi'] ?></h6>
                 </td>
                 <td>
                     <!--    -->

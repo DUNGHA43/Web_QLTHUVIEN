@@ -69,8 +69,8 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                 <h6 style="padding-top: 5px;"><img src="http://localhost/Web_QLTHUVIEN/public/client/image/<?php echo $rows['hinhAnh'] ?>" style="width: 50px; height: 50px;" alt=""></h6>
             </td>
             <td>
-                <a href="tailieu_Controller.php?act=updateDCM&maDCM=<?php echo $rows['maTaiLieu']?>" class="btn btn-warning">Sửa</a>
-                <a onclick="return Del('<?php echo $rows['maTaiLieu'] ?>')" href="tailieu_Controller.php?act=deleteDCM&maDCM=<?php echo $rows['maTaiLieu'] ?>" class="btn btn-danger">Xóa</a>
+                <a href="tailieu_Controller.php?act=updateDCM&maDCM=<?php echo $rows['maTaiLieu']?>" class="btn btn-warning" style="margin-top: 10px;">Sửa</a>
+                <a onclick="return Del('<?php echo $rows['maTaiLieu'] ?>')" href="tailieu_Controller.php?act=deleteDCM&maDCM=<?php echo $rows['maTaiLieu'] ?>" class="btn btn-danger" style="margin-top: 10px;">Xóa</a>
             </td>
         </tr>
 

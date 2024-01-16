@@ -1,8 +1,28 @@
-<nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px;">
+<nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
   <form class="form-inline form-infor">
-    <a class="navbar-brand a text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
-    <a class="navbar-brand text-white">Về chúng tôi</a>
-    <a class="navbar-brand text-white">Mượn sách</a>
+  <div style="display: flex;">
+    <div style="padding-top: 4px;">
+    <a class="navbar-brand a text" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
+    <a class="navbar-brand text">Về chúng tôi</a>
+    <a class="navbar-brand text">Mượn sách</a>
+    </div>
+    <div>
+    <a class="navbar-brand text dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    Thể loại
+    </a>
+    <div class="dropdown-menu bg-dark bg-gradient" style="margin-top: 1.3%; margin-left: 28px; opacity: 0.9;">
+        <a class="dropdown-item text" href="">aaa</a>
+        <a class="dropdown-item text" href="">nnn</a>
+        <a class="dropdown-item text" href="">aaa</a>
+        <a class="dropdown-item text" href="">nnn</a>
+        <a class="dropdown-item text" href="">aaa</a>
+    </div>
+    </div>
+  </div>
+  </form>
+  <form class="d-flex" action="" style="width: 500px;">
+        <input class="form-control me-2" type="search" placeholder="Nhập tên tài liệu" aria-label="Search">
+        <button class="btn btn-outline-success bg-secondary text bg-gradient" type="submit">Search</button>
   </form>
   <form class="form-inline">
     <!-- Example split danger button -->
@@ -15,12 +35,12 @@
       <span class= "mr-2 d-none d-lg-inline text-gray-600 small">'. $_SESSION['hoTen'] . '</span>
       <img src="public/client/image/'.$_SESSION['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
-      <div class="dropdown-menu bg-secondary bg-gradient">
-        <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung">Thông tin cá nhân</a>
-        <button class="navbar-brand dropdown-item text-white" type="button" data-toggle="modal" data-target="#updateinfo" style="font-size: 16px;">
+      <div class="dropdown-menu bg-dark bg-gradient" style="opacity: 0.9; margin-top: 15px;">
+        <a class="navbar-brand dropdown-item textdd" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thongtinnguoidung">Thông tin cá nhân</a>
+        <button class="navbar-brand dropdown-item textdd" type="button" data-toggle="modal" data-target="#updateinfo" style="font-size: 16px;">
         Đổi mật khẩu
         </button>
-        <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
+        <a class="navbar-brand dropdown-item textdd" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     }
@@ -31,11 +51,11 @@
       <img src="public/client/image/'.$_COOKIE['img'].'" alt="" class="img-profile rounded-circle"">
       </button>
       <div class="dropdown-menu">    
-      <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
-      <button class="navbar-brand dropdown-item text-white" type="button" data-toggle="modal" data-target="#update" style="font-size: 16px;">
+      <a class="navbar-brand dropdown-item textdd" href="http://localhost/Web_QLTHUVIEN/View/client/pages/products/thongtincanhan.php?tk='.$_SESSION['taikhoan'].'">Thông tin cá nhân</a>
+      <button class="navbar-brand dropdown-item textdd" type="button" data-toggle="modal" data-target="#update" style="font-size: 16px;">
         Đổi mật khẩu
       </button>
-      <a class="navbar-brand dropdown-item text-white" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
+      <a class="navbar-brand dropdown-item textdd" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=thoat">Đăng xuất</a>
       </div> 
     </div>';
     } 
@@ -135,5 +155,17 @@ validator({
 
 .invalid{
   color: red;
+}
+.navbar-brand:hover{
+  color:  lightblue;
+}
+.text, .textdd{
+  color: azure;
+}
+.textdd:hover{
+  color: black;
+}
+.menu{
+  color: blueviolet;
 }
 </style>
