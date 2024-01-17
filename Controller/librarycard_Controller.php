@@ -23,6 +23,14 @@ include '../Model/CRUD_Model.php';
         $_SESSION['slide_admin'] = 11;
         header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch");
     }
+    if (isset($_POST['btn_SearchDCM']) && ($_POST['btn_SearchDCM'])){
+        echo "<pre>";
+        print_r($_POST);
+        $valueSearch = $_POST['keyword'];
+        $maTTV = $_POST['maTTV'];
+        $_SESSION['slide_admin'] = 14;
+        header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch&maTTV=$maTTV");
+    }
 
     if(isset($_POST['btn-SuaTTV']))
     {
@@ -49,7 +57,7 @@ include '../Model/CRUD_Model.php';
                 $_SESSION['slide_admin'] = 12;
                 $maTTV = $_GET['maTTV'];
                 header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV");
-                break;
+                break;   
         }
     }
 ?>

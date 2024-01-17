@@ -24,7 +24,7 @@
                 <a href="account_Controller.php?act=thethuvien">Thẻ thư viện</a>
             </li>
             <li>
-                <a href="#">Mượn trả sách</a>
+                <a href="account_Controller.php?act=muontrasach">Mượn trả sách</a>
             </li>
             <li>
                 <a href="#">Xử lý vi phạm</a>

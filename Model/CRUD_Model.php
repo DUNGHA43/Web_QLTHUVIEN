@@ -192,4 +192,26 @@
             echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
         }
     }
+    function getNameOrCodeDCM($tb, $cot, $dk, $value)
+    {
+        $conn = connectSQL();
+        $sql = "SELECT $tb FROM tbltailieu WHERE $cot = '$dk'";
+        $rs = mysqli_query($conn, $sql);
+        $kq = mysqli_fetch_array($rs);
+        return strval($kq[$value]);
+    }
+    function addMuonTra($maTTV, $ngayNhan, $ngayHenTra, $ngayHoanTra, $maTL, $soLuong, $trangThai, $ghiChu)
+    {
+        $conn = connectSQL();
+        $sql = "INSERT INTO tblqlmuontra VALUES ('$ngayNhan','$ngayHenTra','$ngayHoanTra','$maTTV','$maTL','$soLuong','$trangThai','$ghiChu')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>

@@ -43,7 +43,13 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
                 break;
             case 12:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/library_card/edit.php';
-                break;  
+                break;
+            case 13:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/borrow_and_return_dcm/index.php';
+                break;
+            case 14:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/borrow_and_return_dcm/add.php';
+                break; 
         }
     }
     include $dashboard_admin_path;

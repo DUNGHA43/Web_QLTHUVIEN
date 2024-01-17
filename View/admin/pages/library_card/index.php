@@ -69,7 +69,8 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                     <h6 style="padding-top: 10px;"><?php echo $rows['ghiChu'] ?></h6>
                 </td>
                 <td>
-                    <a href="#" class="btn btn-success">Sách mượn</a>
+                    <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-success">Mượn sách</a>
+                    <a href="#" class="btn btn-success">Đang mượn</a>
                     <a href="librarycard_Controller.php?act=updatettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-warning">Sửa</a>
                     <a  onclick="return Del('<?php echo $rows['maTheTV'] ?>')" href="librarycard_Controller.php?act=deletettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-danger">Xóa</a>
                 </td>

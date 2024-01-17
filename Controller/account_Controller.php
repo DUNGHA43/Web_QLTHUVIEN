@@ -210,6 +210,10 @@ if (isset($_GET['act'])) {
             $_SESSION['slide_admin'] = 11;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
+        case 'muontrasach':
+            $_SESSION['slide_admin'] = 13;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value&maTTV");
+            break;
         case 'updateTaiKhoan':
             $_SESSION['slide_admin'] = 10;
             echo $_GET['maTK'];
