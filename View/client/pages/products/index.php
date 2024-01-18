@@ -29,7 +29,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
                             <p class="card-text"><?php echo $rows['moTa'] ?></p>
-                            <a href="#" class="btn btn-primary">Mượn ngay!</a>
+                            <a href="#" class="btn btn-success">Mượn ngay!</a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu'] ?></h5>
                                 <p class="card-text"><?php echo $rowsDCM['moTa'] ?></p>
-                                <a href="#" class="btn btn-primary">Mượn ngay!</a>
+                                <a href="#" class="btn btn-success">Mượn ngay!</a>
                             </div>
                         </div>
                     </div>

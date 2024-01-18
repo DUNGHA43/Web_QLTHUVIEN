@@ -10,14 +10,14 @@
         <div class="col-lg-5 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">Về chúng tôi</h5>
   
-          <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque corrupti.
+          <p style="text-align: justify;">
+            Chào mừng bạn đến với trang thư viện của trường chúng tôi. Nơi đây có các tài liệu
+            sẽ giúp ích cho bạn trong việc học tập, giả trí, hiểu biết.
           </p>
   
-          <p>
-            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-            molestias.
+          <p style="text-align: justify;">
+            Thư viện dành cho sinh viên trường. Các bạn sinh viên hãy đến thư viện đăng ký thẻ thư viện
+            để có thể mượn nhiều loại sách giúp ích cho các bạn.
           </p>
         </div>
         <!--Grid column-->
@@ -27,16 +27,16 @@
           <h5 class="text-uppercase mb-4" style="margin-left: 3%;">Liên hệ</h5>
           <ul class="fa-ul">
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Xuân Phương, Nam Từ Liêm, Hà Nội</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">dunghasonlla@outlook.com</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0383366423</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">0376860989</span>
             </li>
           </ul>
         </div>
@@ -71,8 +71,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-3">
-      © 2021 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        Đại học Công nghệ Đông Á
     </div>
     <!-- Copyright -->
   </footer>

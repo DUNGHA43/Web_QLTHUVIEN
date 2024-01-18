@@ -19,6 +19,7 @@ if(isset($_POST['btn-addmuontra']))
             addMuonTra($maTTV, $ngayNhan, $ngayHenTra, $ngayHoanTra, $_SESSION['listTL'][$i][0], $_SESSION['listTL'][$i][1], $_SESSION['listTL'][$i][2], $ghiChu);
         }
         $_SESSION['slide_admin'] = 13;
+        unset($_SESSION['listTL']);
         header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV&value");
     }
     else{ 
