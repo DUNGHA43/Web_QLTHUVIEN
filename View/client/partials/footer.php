@@ -44,7 +44,7 @@
   
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Thời gian làm việc</h5>
+          <h5 class="text-uppercase mb-4">Thời gian làm việc </h5>
   
           <table class="table text-center text-white border border-3 border-secondary table-bordered">
             <tbody class="font-weight-normal">
