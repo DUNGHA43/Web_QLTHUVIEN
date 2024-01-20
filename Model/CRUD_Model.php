@@ -83,7 +83,6 @@
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
-
     function show_Infor_ByName($value,$name,$row)
     {
         $conn = connectSQL();
@@ -240,6 +239,49 @@
             return true;
         } else {
             echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+    function show_Info_Borrow_Return($ten)
+    {
+        $conn = connectSQL();
+        $sql = "SELECT * FROM $ten WHERE ngayHoanTra > ngayHenTra AND ghiChu != 'Đã xử lý'";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
+
+    function updateViolationLibraryCard($maTTV, $cl, $value)
+    {
+        $conn = connectSQL();
+        $sql = "UPDATE tblthethuvien SET $cl = '$value' WHERE maTheTV = '$maTTV'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    function updateNoteMtra($maTTV, $maTL, $value){
+        $conn = connectSQL();
+        $sql = "UPDATE tblqlmuontra SET ghiChu = '$value'  WHERE maTaiLieu = '$maTL' AND maTheTV = '$maTTV'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+
+    function addViolation($maXLVP, $maTheTV, $lyDo, $hinhThuc, $ngayXL)
+    {
+        $conn = connectSQL();
+        $sql = "INSERT INTO tblxulyvipham VALUES ('$maXLVP','$maTheTV','$lyDo','$hinhThuc','$ngayXL')";
+        $rs = mysqli_query($conn, $sql);
+        if($rs > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 ?>

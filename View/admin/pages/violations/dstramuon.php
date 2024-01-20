@@ -3,33 +3,42 @@
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
+$maTTV = "";
+$lyDo = "";
+$maTL = "";
+if(isset($_GET['maTTV']) && isset($_GET['value']))
+{
+    $maTTV = $_GET['maTTV'];
+    $lyDo = "Trả muộn tài liệu " . $_GET['value'];
+    $maTL = $_GET['maTL'];
+}
 ?>
-<h1><span class="badge badge-secondary mb-5">Danh sách mượn trả!</span></h1>
-<div class="container-fluid mb-5">
-    <div class="row">
-        <div class="col-6 ">
+<h1><span class="badge badge-secondary mb-5">Danh sách trả muộn</span></h1>
 
-        </div>
-        <div class="col-6 mb-4">
-            <form id="form-search" class="input-group" method="POST" action="muontra_Controller.php">
-                <input type="text" placeholder="Nhập mã thẻ thư viện" name="keyword" class="form-control" />
-                <div class="input-group-append">
-                    <input name="btn_Search" class="btn btn-success" type="submit" value="Tìm kiếm"></input>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="row d-flex">
-        <div class=" col-md-4 d-flex ml-auto">
-        </div>
-    </div>
+<div class="container-fluid">
+    <div class="col d-flex justify-content-center">
+        <form action="violations_Controller.php" method="post" style="width: 100%;">
+        <input type="hidden" name="_token" value="<?php echo $maTL; ?>">
+            <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1" style="padding-right: 20px;">Thẻ thư viện</span>
+            <input type="text" class="form-control" aria-label="name" aria-describedby="basic-addon1" name="maTTV" value="<?php echo $maTTV; ?>" style="margin-right: 10px; width: auto;" readonly>
+            <span class="input-group-text" id="basic-addon1" style="padding-right: 20px;">Lý do vi phạm</span>
+            <input type="text" class="form-control" aria-label="name" aria-describedby="basic-addon1" name="lyDoVP" value="<?php echo $lyDo; ?>" style="width: auto; margin-right: 10px;">
+            <span class="input-group-text" id="basic-addon1" style="padding-right: 20px;">Hình thức xử lý</span>
+            <select name="hinhThuc" class="form-control" aria-label="name" aria-describedby="basic-addon1" style="width: auto;">
+                <option value="Cảnh cáo">Cảnh cáo</option>
+                <option value="Khóa tài khoản">Khóa tài khoản</option>
+            </select>
+            <button type="submit" name="btn-ThemViPham" class="btn btn-success" style="width: 80px; margin-left: 5px;">Xử lý</button>
+            </div>
+        </form>
+    </div>  
 </div>
-
 
 <table class="table table-hover table-sm text-center" checkboxMulti>
     <thead>
         <tr>
-            <th>Mã thẻ thư viện</th>
+            <th>Thẻ thư viện</th>
             <th>Ngày nhận</th>
             <th>Ngày hẹn trả</th>
             <th>Ngày hoàn trả</th>
@@ -40,13 +49,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
             <th>Lựa chọn</th>
         </tr>
         <?php
-    $maTTV = $_GET['maTTV'];
-    $smTTV = $_GET['value'];
-    if ($smTTV == "" && $maTTV == "") {
-        $result = show_Info_All('tblqlmuontra');
-    } else if ($smTTV == "") {
-        $result = show_Infor_ByName($maTTV,'tblqlmuontra','maTheTV');}
-    else{ $result = show_Infor_ByName($smTTV,'tblqlmuontra','maTheTV'); }
+        $result = show_Info_Borrow_Return('tblqlmuontra');
     while ($rows = mysqli_fetch_array($result)) {
     ?>
         <tbody>
@@ -76,9 +79,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                     <h6 style="padding-top: 10px;"><?php echo $rows['ghiChu'] ?></h6>
                 </td>
                 <td>
-                    <a href="muontra_Controller.php?act=xacnhanmuon&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-success">Đã nhận</a>
-                    <a href="muontra_Controller.php?act=xacnhantra&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&soLuong=<?php echo $rows['soLuong']; ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-success">Đã trả</a>
-                    <a onclick="return Del('<?php echo $rows['maTheTV'] ?>')" href="muontra_Controller.php?act=xoamuontra&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&soLuong=<?php echo $rows['soLuong']; ?>" class="btn btn-danger">Xóa</a>
+                    <a href="violations_Controller.php?act=chonvippham&maTTV=<?php echo $rows['maTheTV']; ?>&tenTL=<?php echo getNameOrCodeDCM('tenTaiLieu', 'maTaiLieu', $rows['maTaiLieu'], 'tenTaiLieu'); ?>" class="btn btn-success">Chọn</a>
                 </td>
             </tr>
 
@@ -86,13 +87,6 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
             <!-- End of product loop -->
         </tbody>
     <?php } ?>    
-
-
-    <script>
-        function Del(name) {
-            return confirm("Bạn có muốn xóa sách mượn của thẻ : " + name + "?");
-        }
-    </script>
 </table>
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra

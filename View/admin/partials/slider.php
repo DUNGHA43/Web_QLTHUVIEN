@@ -27,7 +27,7 @@
                 <a href="account_Controller.php?act=muontrasach">Mượn trả sách</a>
             </li>
             <li>
-                <a href="#">Xử lý vi phạm</a>
+                <a href="account_Controller.php?act=xulyvipham">Xử lý vi phạm</a>
             </li>
             <li>
                 <a href="#">Thống kê</a>

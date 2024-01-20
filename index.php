@@ -49,7 +49,13 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
                 break;
             case 14:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/borrow_and_return_dcm/add.php';
-                break; 
+                break;
+            case 15:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/violations/index.php';
+                break;  
+            case 16:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/violations/dstramuon.php';
+                break;  
         }
     }
     include $dashboard_admin_path;

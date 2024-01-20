@@ -69,10 +69,17 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                     <h6 style="padding-top: 10px;"><?php echo $rows['ghiChu'] ?></h6>
                 </td>
                 <td>
-                    <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-success">Mượn sách</a>
+                    <?php 
+                    if($rows['trangThai'] == "Thẻ bị khóa" )
+                    {?>
+                        <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-secondary" style="pointer-events: none;">Mượn sách</a>
+                    <?php }
+                    else{ ?>
+                        <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-success">Mượn sách</a>
+                    <?php }?>
                     <a href="muontra_Controller.php?act=sachmuon&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-success">Đang mượn</a>
                     <a href="librarycard_Controller.php?act=updatettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-warning">Sửa</a>
-                    <a  onclick="return Del('<?php echo $rows['maTheTV'] ?>')" href="librarycard_Controller.php?act=deletettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-danger">Xóa</a>
+                    <a onclick="return Del('<?php echo $rows['maTheTV'] ?>')" href="librarycard_Controller.php?act=deletettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-danger">Xóa</a>
                 </td>
             </tr>
 
@@ -127,6 +134,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                                 <OPTION Value="Đã kích hoạt">Đã kích hoạt</OPTION>
                                 <OPTION Value="Chưa kích hoạt">Chưa kích hoạt</OPTION>
                                 <OPTION Value="Hết hạn thẻ">Hết hạn thẻ</OPTION>
+                                <OPTION Value="Hết hạn thẻ">Thẻ bị khóa</OPTION>
                             </select>
                         </div>
                     </div>

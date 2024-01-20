@@ -47,6 +47,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                                 <OPTION Value="Đã kích hoạt" <?php if("Đã kích hoạt" == $udTG['trangThai']) {echo 'selected';} ?>>Đã kích hoạt</OPTION>
                                 <OPTION Value="Chưa kích hoạt" <?php if("Chưa kích hoạt" == $udTG['trangThai']) {echo 'selected';} ?>>Chưa kích hoạt</OPTION>
                                 <OPTION Value="Hết hạn thẻ" <?php if("Hết hạn thẻ" == $udTG['trangThai']) {echo 'selected';} ?>>Hết hạn thẻ</OPTION>
+                                <OPTION Value="Thẻ bị khóa" <?php if("Thẻ bị khóa" == $udTG['trangThai']) {echo 'selected';} ?>>Thẻ bị khóa</OPTION>
                             </select>
                         </div>
                     </div>

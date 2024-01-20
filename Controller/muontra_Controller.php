@@ -22,6 +22,12 @@ if(isset($_POST['btn-addmuontra']))
         unset($_SESSION['listTL']);
         header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV&value");
     }
+    elseif($ngayHenTra == "") 
+    {
+        $msg = "Vui lòng chọn ngày hẹn trả!";
+        $_SESSION['slide_admin'] = 14;
+        header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV&msg=$msg&value");
+    }
     else{ 
         $msg = "Bạn chưa chọn sách!!";
         $_SESSION['slide_admin'] = 14;
@@ -43,6 +49,7 @@ if (isset($_GET['act'])) {
         case 'muonsach':
             $_SESSION['slide_admin'] = 14;
             $maTTV = $_GET['maTTV'];
+            $trangThai = $_GET['trangThai'];
             header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV&value");
             break;
         case 'sachmuon':
@@ -75,7 +82,7 @@ if (isset($_GET['act'])) {
                 updateXNMuonTra('ngayHoanTra', $ngayTra, 'Đã trả', $maTL, $maTTV);
                 updateSLDCM(($slCu + $soLuong),$maTL);
             }
-            header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV&value");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?maTTV=$maTTV&value");
             break;
         case 'xoamuontra':
             $_SESSION['slide_admin'] = 13;
