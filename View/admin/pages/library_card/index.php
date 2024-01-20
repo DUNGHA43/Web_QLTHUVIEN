@@ -70,7 +70,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                 </td>
                 <td>
                     <?php 
-                    if($rows['trangThai'] == "Thẻ bị khóa" )
+                    if($rows['trangThai'] == "Thẻ bị khóa" || $rows['trangThai'] == "Hết hạn thẻ")
                     {?>
                         <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-secondary" style="pointer-events: none;">Mượn sách</a>
                     <?php }
