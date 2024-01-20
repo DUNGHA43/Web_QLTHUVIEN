@@ -24,16 +24,26 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
             while ($rows = $dcmNew->fetch_assoc()) {
             ?>
                 <div class="col-3" style="padding-top: 20px;">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; height: 580px;">
                         <img src="public/client/image/<?php echo $rows['hinhAnh'] ?>" class="card-img-top" alt="..." style=" height: 300px;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
-                            <p class="card-text"><?php echo $rows['moTa'] ?></p>
-                            <a href="#" class="btn btn-success">Mượn ngay!</a>
+                            <p class="card-text" id="<?php echo $rows['maTaiLieu'].'1' ?>"><?php echo $rows['moTa'] ?></p>
+                            <a href="#" class="btn btn-success" style="bottom: 0;"><?php if($rows['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></a>
                         </div>
                     </div>
                 </div>
-            <?php }
+            <?php 
+                echo " <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                var paragraph = document.getElementById('".$rows['maTaiLieu']."1');
+                var text = paragraph.textContent;
+                var maxLength = 180;
+                var shortenedText = text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+                paragraph.textContent = shortenedText;
+                });
+                </script>";
+            }
             ?>
         </div>
     </div>
@@ -55,16 +65,30 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                 while ($rowsDCM = $dcmByCGR->fetch_assoc()) {
                 ?>
                     <div class="col-3" style="padding-top: 20px;">
-                        <div class="card" style="width: 18rem;">
-                            <img src="public/client/image/<?php echo $rowsDCM['hinhAnh'] ?>" class="card-img-top" alt="..." style=" height: 300px;">
+                        <div class="card" style="width: 18rem; height: 580px;">
+                            <img src="public/client/image/<?php echo $rowsDCM['hinhAnh']; ?>" class="card-img-top" alt="..." style=" height: 300px;">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu'] ?></h5>
-                                <p class="card-text"><?php echo $rowsDCM['moTa'] ?></p>
-                                <a href="#" class="btn btn-success">Mượn ngay!</a>
+                                <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu']; ?></h5>
+                                <p class="card-text" id="<?php echo $rowsDCM['maTaiLieu']; ?>"><?php echo $rowsDCM['moTa'] ?></p>
+                                <a href="#" class="btn btn-success"><?php if($rowsDCM['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></a>
                             </div>
                         </div>
                     </div>
-            <?php }
+            <?php 
+                               echo " <script>
+                               document.addEventListener('DOMContentLoaded', function() {
+                               var paragraph = document.getElementById('".$rowsDCM['maTaiLieu']."');
+                               var text = paragraph.textContent;
+       
+                               // Giới hạn độ dài của đoạn văn bản
+                               var maxLength = 180;
+                               var shortenedText = text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+       
+                               // Gán văn bản đã giới hạn vào thẻ <p>
+                               paragraph.textContent = shortenedText;
+                               });
+                            </script>";
+                }
             } ?>
             </div>
         </div>
@@ -73,6 +97,20 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 </div>
 </div>
 </div>
+<style>
+    .card{
+        position: relative; /* Đặt vị trí của thẻ cha là relative */
+        width: 18rem;
+    }
+    .card a {
+      position: absolute; /* Đặt vị trí của thẻ a là absolute */
+      bottom: 0; /* Hiển thị ở phía dưới của thẻ cha */
+      left: 0;
+      padding: 10px; /* Thêm padding nếu cần thiết */
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+</style>
 <?php
 $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 

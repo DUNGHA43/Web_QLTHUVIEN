@@ -76,9 +76,9 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                     <h6 style="padding-top: 10px;"><?php echo $rows['ghiChu'] ?></h6>
                 </td>
                 <td>
-                    <a href="#" class="btn btn-success">Đã nhận</a>
-                    <a href="#" class="btn btn-success">Đã trả</a>
-                    <a href="#" class="btn btn-danger">Xóa</a>
+                    <a href="muontra_Controller.php?act=xacnhanmuon&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-success">Đã nhận</a>
+                    <a href="muontra_Controller.php?act=xacnhantra&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&soLuong=<?php echo $rows['soLuong']; ?>&trangThai=<?php echo $rows['trangThai']; ?>" class="btn btn-success">Đã trả</a>
+                    <a href="muontra_Controller.php?act=xoamuontra&maTL=<?php echo $rows['maTaiLieu']; ?>&maTTV=<?php echo $rows['maTheTV']; ?>&soLuong=<?php echo $rows['soLuong']; ?>" class="btn btn-danger">Xóa</a>
                 </td>
             </tr>
 

@@ -4,7 +4,6 @@
     <div style="padding-top: 4px;">
     <a class="navbar-brand a text" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang chủ</span></a>
     <a class="navbar-brand text">Về chúng tôi</a>
-    <a class="navbar-brand text">Mượn sách</a>
     </div>
     <div>
     <a class="navbar-brand text dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">

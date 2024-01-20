@@ -214,4 +214,32 @@
             return false;
         }
     }
+    function updateSLDCM($soLuong, $maTL){
+        $conn = connectSQL();
+        $sql = "UPDATE tbltailieu SET soLuong = '$soLuong'  WHERE maTaiLieu = '$maTL'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+    function updateXNMuonTra($ngay, $vluengay, $vlueTrangThai, $maTL, $maTTV){
+        $conn = connectSQL();
+        $sql = "UPDATE tblqlmuontra SET $ngay = '$vluengay', trangThai = '$vlueTrangThai'  WHERE maTaiLieu = '$maTL' AND maTheTV = '$maTTV'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+    function DeleteTwoConditions($tb, $con1, $con2, $vlueCon1, $vlueCon2)
+    {
+        $conn = connectSQL();
+        $sql = "DELETE FROM $tb WHERE $con1 ='$vlueCon1' AND $con2 = '$vlueCon2'";
+        if (mysqli_query($conn, $sql)) {
+            return true;
+        } else {
+            echo "Lỗi: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
 ?>

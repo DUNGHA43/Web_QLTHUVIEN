@@ -70,7 +70,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                 </td>
                 <td>
                     <a href="muontra_Controller.php?act=muonsach&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-success">Mượn sách</a>
-                    <a href="#" class="btn btn-success">Đang mượn</a>
+                    <a href="muontra_Controller.php?act=sachmuon&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-success">Đang mượn</a>
                     <a href="librarycard_Controller.php?act=updatettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-warning">Sửa</a>
                     <a  onclick="return Del('<?php echo $rows['maTheTV'] ?>')" href="librarycard_Controller.php?act=deletettv&maTTV=<?php echo $rows['maTheTV'] ?>" class="btn btn-danger">Xóa</a>
                 </td>
