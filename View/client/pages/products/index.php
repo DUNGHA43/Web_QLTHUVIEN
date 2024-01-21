@@ -29,7 +29,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $rows['tenTaiLieu'] ?></h5>
                             <p class="card-text" id="<?php echo $rows['maTaiLieu'].'1' ?>"><?php echo $rows['moTa'] ?></p>
-                            <a href="#" class="btn btn-success" style="bottom: 0;"><?php if($rows['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></a>
+                            <h6 href="#" class="" style="bottom: 0;">Trạng thái: <?php if($rows['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></h6>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $rowsDCM['tenTaiLieu']; ?></h5>
                                 <p class="card-text" id="<?php echo $rowsDCM['maTaiLieu']; ?>"><?php echo $rowsDCM['moTa'] ?></p>
-                                <a href="#" class="btn btn-success"><?php if($rowsDCM['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></a>
+                                <h6 href="#" class="">Trạng thái: <?php if($rowsDCM['soLuong'] > 0 ){ echo "Còn sách"; }else{ echo "Đang hết";} ?></h6>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
         position: relative; /* Đặt vị trí của thẻ cha là relative */
         width: 18rem;
     }
-    .card a {
+    .card h6 {
       position: absolute; /* Đặt vị trí của thẻ a là absolute */
       bottom: 0; /* Hiển thị ở phía dưới của thẻ cha */
       left: 0;
