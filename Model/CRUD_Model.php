@@ -284,4 +284,21 @@
             return false;
         }
     }
+
+
+    function ThongKeKho(){
+        $conn = connectSQL();
+        $sql = "SELECT tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`hinhAnh`, tl.`soLuong` AS 'SoLuongCon',
+         COUNT(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`maTaiLieu` END) AS 'SoLuongMuon',
+          (tl.`soLuong` - COUNT(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`maTaiLieu` END)) AS 'SoLuongTong' FROM tbltailieu tl LEFT JOIN tblqlmuontra mt ON tl.`maTaiLieu` = mt.`maTaiLieu` GROUP BY tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`soLuong`";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
+
+    function MuonTaiLieu(){
+        $conn = connectSQL();
+        $sql = "SELECT tblthethuvien.`maTheTV`, tblthethuvien.`taiKhoan`, tbltailieu.`tenTaiLieu`, tblqlmuontra.`trangThai` from tblqlmuontra right join tblthethuvien on tblqlmuontra.`maTheTV` = tblthethuvien.`maTheTV` left join tbltailieu on tblqlmuontra.`maTaiLieu` = tbltailieu.`maTaiLieu` where tblqlmuontra.`trangThai` = 'Đã nhận'";
+        $rs = mysqli_query($conn, $sql);
+        return $rs;
+    }
 ?>

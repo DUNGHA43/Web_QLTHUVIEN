@@ -30,7 +30,7 @@
                 <a href="account_Controller.php?act=xulyvipham">Xử lý vi phạm</a>
             </li>
             <li>
-                <a href="#">Thống kê</a>
+                <a href="account_Controller.php?act=thongke">Thống kê</a>
             </li>
             <li>
                 <a href="account_Controller.php?act=thoat">Thoát</a>

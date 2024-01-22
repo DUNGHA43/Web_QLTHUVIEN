@@ -56,6 +56,9 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
             case 16:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/violations/dstramuon.php';
                 break;  
+            case 17:
+                $dashboard_admin_path = ADMIN_PATH . 'pages/statistical/index.php';
+                break; 
         }
     }
     include $dashboard_admin_path;
