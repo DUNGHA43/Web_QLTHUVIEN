@@ -22,7 +22,7 @@ if (isset($_POST['btn-login']) && ($_POST['btn-login'])) {
         if (isset($_POST['checksave'])) {
             setcookie("maquyen", $role, time() + (86400 * 7), "/");
         }
-        header("location: http://localhost/Web_QLTHUVIEN/index.php");
+        header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
     } else if ($role == "2") {
         $_SESSION['maquyen'] = $role;
         $_SESSION['hoTen'] = $kq[0]['hoTen'];
@@ -32,10 +32,10 @@ if (isset($_POST['btn-login']) && ($_POST['btn-login'])) {
             setcookie("hoTen", $kq[0]['hoTen'], time() + (86400 * 7), "/");
             setcookie("img", $rows['anhTaiKhoan'], time() + (86400 * 7), "/");
         }
-        header("location: http://localhost/Web_QLTHUVIEN/index.php");
+        header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
     } else {
 
-        header("location: http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangnhap.php");
+        header("location: http://localhost/Web_QLTHUVIEN/View/client/pages/products/dangnhap.php?value");
     }
 }
 
@@ -166,6 +166,14 @@ if (isset($_POST['btn_Search']) && ($_POST['btn_Search'])){
     header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch");
 }
 
+if (isset($_POST['client_Search']) && ($_POST['client_Search'])){
+    echo "<pre>";
+    print_r($_POST);
+    $valueSearch = $_POST['keyword'];
+    $_SESSION['slide_client'] = 0;
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$valueSearch&&btn=search");
+}
+
 include '../View/client/partials/header.php';
 include '../View/admin/partials/slider.php';
 if (isset($_GET['act'])) {
@@ -174,16 +182,16 @@ if (isset($_GET['act'])) {
     switch ($_GET['act']) {
         case 'thongtinnguoidung':
             $_SESSION['slide_client'] = 1;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'trangchuclient':
             $_SESSION['slide_client'] = 0;
-            $maTL = $_GET['maTL'];
-            header("location: http://localhost/Web_QLTHUVIEN/index.php?maTL=$maTL");
+            $maTL = $_GET['value'];
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$maTL");
             break;
         case 'trangchu':
             $_SESSION['slide_admin'] = 0;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
         case 'tacgia':
             $_SESSION['slide_admin'] = 1;
@@ -243,7 +251,7 @@ if (isset($_GET['act'])) {
             setcookie("slide_admin", "", time() + (86400 * 7), "/");
             setcookie("taikhoan", $taiKhoan, time() + (86400 * 7), "/");
             setcookie("slide_client", 0, time() + (86400 * 7), "/");
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
             break;
     }
 }

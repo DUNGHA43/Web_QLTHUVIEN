@@ -1,6 +1,4 @@
-<?php
-include_once "C:/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
-?>
+<?php include_once "/VisualStudioCode/PHP/htdocs/Web_QLTHUVIEN/Model/show_Documents.php"; ?>
 <nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
     <form class="form-inline form-infor">
         <div style="display: flex;">
@@ -20,16 +18,16 @@ include_once "C:/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
                     while ($rows = $rs->fetch_assoc())
                     {
                     ?>
-                    <a class="dropdown-item text" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient&maTL=<?php echo $rows['maTL']; ?>"><?php echo $rows['tenTL']; ?></a>
+                    <a class="dropdown-item text" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient&value=<?php echo $rows['maTL']; ?>"><?php echo $rows['tenTL']; ?></a>
                     <?php }?>
                 </div>
             </div>
         </div>
     </form>
-    <form class="d-flex" action="" style="width: 500px;">
-        <input class="form-control me-2" type="search" placeholder="Nhập tên tài liệu" aria-label="Search"
+    <form class="d-flex" style="width: 500px;" method="POST" action="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php">
+        <input class="form-control me-2" name="keyword" type="search" placeholder="Nhập tên tài liệu" aria-label="Search"
             style="width: 80%;">
-        <button class="btn btn-outline-success bg-secondary text bg-gradient" type="submit">Tìm kiếm</button>
+        <input name="client_Search" class="btn btn-outline-success bg-secondary text bg-gradient" type="submit" value="Tìm Kiếm"></input>
     </form>
     <form class="form-inline">
         <!-- Example split danger button -->
