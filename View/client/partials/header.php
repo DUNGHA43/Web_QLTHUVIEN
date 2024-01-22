@@ -1,3 +1,6 @@
+<?php
+include_once "C:/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
+?>
 <nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
     <form class="form-inline form-infor">
         <div style="display: flex;">
@@ -13,11 +16,12 @@
                 </a>
                 <div class="dropdown-menu bg-dark bg-gradient"
                     style="margin-top: 1.3%; margin-left: 28px; opacity: 0.9;">
-                    <a class="dropdown-item text" href="">aaa</a>
-                    <a class="dropdown-item text" href="">nnn</a>
-                    <a class="dropdown-item text" href="">aaa</a>
-                    <a class="dropdown-item text" href="">nnn</a>
-                    <a class="dropdown-item text" href="">aaa</a>
+                    <?php $rs = showCGR(); 
+                    while ($rows = $rs->fetch_assoc())
+                    {
+                    ?>
+                    <a class="dropdown-item text" href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient&maTL=<?php echo $rows['maTL']; ?>"><?php echo $rows['tenTL']; ?></a>
+                    <?php }?>
                 </div>
             </div>
         </div>

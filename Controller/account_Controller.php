@@ -156,8 +156,6 @@ if (isset($_POST['btn-SuaTaiKhoan'])) {
     changePass($taiKhoan, $matKhau);
     $_SESSION['slide_admin'] = 9;
     header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
-} else {
-    echo "no data";
 }
 
 if (isset($_POST['btn_Search']) && ($_POST['btn_Search'])){
@@ -180,7 +178,8 @@ if (isset($_GET['act'])) {
             break;
         case 'trangchuclient':
             $_SESSION['slide_client'] = 0;
-            header("location: http://localhost/Web_QLTHUVIEN/index.php");
+            $maTL = $_GET['maTL'];
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?maTL=$maTL");
             break;
         case 'trangchu':
             $_SESSION['slide_admin'] = 0;

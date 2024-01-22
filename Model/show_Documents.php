@@ -1,5 +1,5 @@
 <?php 
-include "connect.php";
+include_once "connect.php";
 function showDCM()
 {
     $conn = connectSQL();
@@ -11,6 +11,13 @@ function showCGR()
 {
     $conn = connectSQL();
     $sql = 'SELECT * FROM tbltheloai';
+    $rs = mysqli_query($conn,$sql);
+    return $rs;
+}
+function showCGRByCode($maTL)
+{
+    $conn = connectSQL();
+    $sql = "SELECT * FROM tbltheloai WHERE maTL = '$maTL'";
     $rs = mysqli_query($conn,$sql);
     return $rs;
 }

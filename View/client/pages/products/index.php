@@ -50,7 +50,18 @@ ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 
 
     <?php
-    $cGR = showCGR();
+    $smTL = "";
+    if(isset($_GET['maTL']))
+    {
+        $smTL = $_GET['maTL'];
+    }
+    if($smTL == "")
+    {
+        $cGR = showCGR();
+    }else
+    {
+        $cGR = showCGRByCode($smTL);
+    }
     while ($rowsCGR = $cGR->fetch_assoc()) {
     ?>
         <div class="container my-3">
