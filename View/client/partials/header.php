@@ -1,5 +1,5 @@
 <?php
-include_once "C:/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
+include_once "/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
 ?>
 <nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
     <form class="form-inline form-infor">
@@ -26,10 +26,12 @@ include_once "C:/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php";
             </div>
         </div>
     </form>
-    <form class="d-flex" action="" style="width: 500px;">
-        <input class="form-control me-2" type="search" placeholder="Nhập tên tài liệu" aria-label="Search"
-            style="width: 80%;">
-        <button class="btn btn-outline-success bg-secondary text bg-gradient" type="submit">Tìm kiếm</button>
+    <form class="d-flex"  style="width: 500px;">
+        <form action="" action="" method="post">
+            <input class="form-control me-2" type="text" placeholder="Nhập tên tài liệu" aria-label="Search"
+            style="width: 80%;" name="vlueTen">
+            <input class="btn btn-outline-success bg-secondary text bg-gradient" type="submit" value="Tìm sách" name="timSach">
+        </form>
     </form>
     <form class="form-inline">
         <!-- Example split danger button -->

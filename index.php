@@ -58,6 +58,7 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
                 break;  
         }
     }
+    
     include $dashboard_admin_path;
 }
 else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "1") {

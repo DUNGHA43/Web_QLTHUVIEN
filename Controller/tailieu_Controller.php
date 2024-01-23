@@ -66,8 +66,6 @@ include "../Model/CRUD_Model.php";
         $_SESSION['slide_admin'] = 5;
         header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
     }
-    else{ echo "no data";}
-
     if (isset($_GET['act'])) {
     
         switch ($_GET['act']) {
