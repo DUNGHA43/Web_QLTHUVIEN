@@ -151,6 +151,9 @@ include '../Web_QLTHUVIEN/Model/CRUD_Model.php';
         </div>
     </div>
 </div>
+</div>
+</div>
+</div>
 <style>
     .card{
         position: relative; /* Đặt vị trí của thẻ cha là relative */
