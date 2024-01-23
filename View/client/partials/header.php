@@ -1,4 +1,4 @@
-<?php include_once "/VisualStudioCode/PHP/htdocs/Web_QLTHUVIEN/Model/show_Documents.php"; ?>
+<?php include_once "/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php"; ?>
 <nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
     <form class="form-inline form-infor">
         <div style="display: flex;">

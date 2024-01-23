@@ -13,7 +13,10 @@ include '../Web_QLTHUVIEN/Model/CRUD_Model.php';
             </div>
         </div>
     </div>
-    <?php if($_GET['value'] == ""){ ?> 
+    <?php
+    if(isset($_GET['value']))
+    {
+    if($_GET['value'] == ""){ ?> 
     <div class="container my-3">
         <div class="row">
             <div class="col-12">
@@ -49,7 +52,7 @@ include '../Web_QLTHUVIEN/Model/CRUD_Model.php';
             ?>
         </div>
     </div>
-        <?php }?>
+        <?php }}?>
 
     <?php
     $smTL = "";
@@ -142,7 +145,9 @@ include '../Web_QLTHUVIEN/Model/CRUD_Model.php';
                             </script>";
                 }
             } ?>
-            </div>
+            </div></div>
+        </div>
+        </div>
         </div>
     </div>
 </div>
