@@ -6,7 +6,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 ?>
 
 <div class="modal-header">
-                <h1 class="modal-title">Thống Kê Người Dùng Đang Mượn</h1>
+                <h1 class="modal-title">Thống Kê Tài Liệu</h1>
             </div>
 <table class="table table-hover table-sm text-center" checkboxMulti>
     <thead>
@@ -52,7 +52,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 
 
 <div class="modal-header">
-                <h1 class="modal-title">Thống Kê Tài Liệu</h1>
+                <h1 class="modal-title">Thống Kê Người Dùng Đang Mượn</h1>
             </div>
 <table class="table table-hover table-sm text-center" checkboxMulti>
     <thead>

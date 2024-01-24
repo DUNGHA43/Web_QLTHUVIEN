@@ -45,6 +45,14 @@
         }
     }
 
+    function getMKByTK($ma, $tentb, $dk, $ten){
+        $conn = connectSQL();
+        $sql = "SELECT $ma FROM $tentb WHERE $dk ='".$ten."'";
+        $rs = mysqli_query($conn, $sql);
+        $kq = $rs->fetch_array();
+        return $kq[$ma];
+    }
+
     function getUserInfo($taiKhoan, $matKhau)
     {
         $conn = connectSQL();

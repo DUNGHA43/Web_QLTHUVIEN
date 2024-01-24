@@ -82,14 +82,18 @@ if (isset($_POST['btn-capnhat'])) {
 }
 
 if (isset($_POST['btn-doimatkhau'])) {
-    $row = mysqli_fetch_array(showUser($_SESSION['taikhoan']));
-    $message;
-    if ($rows['matKhau'] = $_POST['mkCu']) {
-        $kq = changePass($_SESSION['taikhoan'], $_POST['mkMoi']);
+    $rows = showUser($_SESSION['taikhoan']);
+    while($rs = mysqli_fetch_array($rows))
+    {
+        $mkCu = $rs['matKhau'];
+    }
+    $message = "Thay mật khẩu không trùng!";
+    if ($mkCu == $_POST['mkCu']) {
+         $kq = changePass($_SESSION['taikhoan'], $_POST['mkMoi']);
         ($kq > 0) ? $message = "Thay mật khẩu thành công!" : "Thay mật khẩu không thành công!";
     }
     $_SESSION['slide_client'] = 0;
-    header("location: http://localhost/Web_QLTHUVIEN/index.php");
+    header("location: http://localhost/Web_QLTHUVIEN/index.php?msg=$message");
 }
 
 if (isset($_POST['btn-ThemTaiKhoan'])) {

@@ -5,6 +5,12 @@ include $dataFile;
 $pageTitle = "Page Title";
 ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 include '../Web_QLTHUVIEN/Model/CRUD_Model.php';
+if(isset($_GET['msg']))
+{?>
+    <script>
+        alert('<?php echo $_GET['msg']; ?>');
+    </script>
+<?php } ?>
 ?>
 <div class="container-fluid bg-light bg-gradient">
     <div class="container header d-flex justify-content-center">
