@@ -288,9 +288,7 @@
 
     function ThongKeKho(){
         $conn = connectSQL();
-        $sql = "SELECT tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`hinhAnh`, tl.`soLuong` AS 'SoLuongCon',
-         COUNT(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`maTaiLieu` END) AS 'SoLuongMuon',
-          (tl.`soLuong` - COUNT(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`maTaiLieu` END)) AS 'SoLuongTong' FROM tbltailieu tl LEFT JOIN tblqlmuontra mt ON tl.`maTaiLieu` = mt.`maTaiLieu` GROUP BY tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`soLuong`";
+        $sql = "SELECT tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`hinhAnh`, tl.`soLuong` AS 'SoLuongCon', SUM(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`soLuong` ELSE 0 END) AS 'SoLuongMuon', (tl.`soLuong` + SUM(CASE WHEN mt.`trangThai` = 'Đã nhận' THEN mt.`soLuong` ELSE 0 END)) AS 'SoLuongTong' FROM tbltailieu tl LEFT JOIN tblqlmuontra mt ON tl.`maTaiLieu` = mt.`maTaiLieu` GROUP BY tl.`maTaiLieu`, tl.`tenTaiLieu`, tl.`soLuong`";
         $rs = mysqli_query($conn, $sql);
         return $rs;
     }
