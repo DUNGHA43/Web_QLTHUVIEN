@@ -3,7 +3,10 @@
     $pageTitle = "Page Title";
     ob_start(); // Bắt đầu bộ nhớ đệm đầu ra
 ?> 
-<a href="">toi ten la Hoang</a>
+
+<h1>Xin chào tài khoản admin:  <?php if(isset($_SESSION['taikhoan'])) {
+    echo $_SESSION['taikhoan'];
+    } ?></h1>
 <?php
     $content = ob_get_clean(); // Lấy nội dung từ bộ nhớ đệm đầu ra
 
