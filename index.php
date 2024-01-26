@@ -6,7 +6,7 @@ if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "1") {
     if (isset($_SESSION['slide_admin'])) {
         switch ($_SESSION['slide_admin']) {
             case 0:
-                $dashboard_admin_path = ADMIN_PATH . 'pages/dashboard/index.php';
+                $dashboard_admin_path = ADMIN_PATH . 'pages/statistical/index.php';
                 break;
             case 1:
                 $dashboard_admin_path = ADMIN_PATH . 'pages/products/index.php';

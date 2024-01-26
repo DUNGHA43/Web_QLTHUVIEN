@@ -3,21 +3,6 @@
     <div class="inner-menu">
         <ul>
             <li>
-                <a href="account_Controller.php?act=trangchu">Trang chủ</a>
-            </li>
-            <li>
-                <a href="account_Controller.php?act=tacgia">Tác giả</a>
-            </li>
-            <li>
-                <a href="account_Controller.php?act=nhacungcap">Nhà cung cấp</a>
-            </li>
-            <li>
-                <a href="account_Controller.php?act=tailieu">Tài Liệu</a>
-            </li>
-            <li>
-                <a href="account_Controller.php?act=theloai">Thể loại</a>
-            </li>
-            <li>
                 <a href="account_Controller.php?act=taikhoan">Tài khoản</a>
             </li>
             <li>
@@ -28,6 +13,18 @@
             </li>
             <li>
                 <a href="account_Controller.php?act=xulyvipham">Xử lý vi phạm</a>
+            </li>
+            <li>
+                <a href="account_Controller.php?act=tailieu">Tài Liệu</a>
+            </li>
+            <li>
+                <a href="account_Controller.php?act=tacgia">Tác giả</a>
+            </li>
+            <li>
+                <a href="account_Controller.php?act=nhacungcap">Nhà cung cấp</a>
+            </li>
+            <li>
+                <a href="account_Controller.php?act=theloai">Thể loại</a>
             </li>
             <li>
                 <a href="account_Controller.php?act=thongke">Thống kê</a>
