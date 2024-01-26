@@ -1,4 +1,4 @@
-<?php include_once "/VisualStudioCode/PHP/htdocs/Web_QLTHUVIEN/Model/show_Documents.php"; ?>
+<?php include_once "/xampp/htdocs/Web_QLTHUVIEN/Model/show_Documents.php"; ?>
 <nav class="navbar navbar-light bg-dark bg-gradient fixed-top" style="padding: 15px 40px; height: 80px; width: 100%;">
     <form class="form-inline form-infor">
         <div style="display: flex;">
@@ -6,7 +6,7 @@
                 <a class="navbar-brand a text"
                     href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=trangchuclient">Trang
                     chủ</span></a>
-                <a class="navbar-brand text">Về chúng tôi</a>
+                <a href="http://localhost/Web_QLTHUVIEN/Controller/account_Controller.php?act=vechungtoi" class="navbar-brand text">Về chúng tôi</a>
             </div>
             <div>
                 <a class="navbar-brand text dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">

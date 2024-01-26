@@ -92,6 +92,9 @@ else if (isset($_SESSION['maquyen']) && ($_SESSION['maquyen']) == "2") {
             case 1:
                 $htmlFilePath = CLIENT_PATH . 'pages/products/thongtincanhan.php';
                 break;
+            case 2:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/gioithieu.php';
+                break;
         }
     }
     include $htmlFilePath;
@@ -117,5 +120,12 @@ else if (isset($_COOKIE['maquyen']) && ($_COOKIE['maquyen']) == "2") {
     define('MODEL_PATH', __DIR__ . '/Model/');
     define('CLIENT_PATH', __DIR__ . '/View/client/');
     $htmlFilePath = CLIENT_PATH . 'pages/products/index.php';
+    if (isset($_SESSION['slide_client'])) {
+        switch ($_SESSION['slide_client']) {
+            case 2:
+                $htmlFilePath = CLIENT_PATH . 'pages/products/gioithieu.php';
+                break;
+        }
+    }
     include $htmlFilePath;
 }

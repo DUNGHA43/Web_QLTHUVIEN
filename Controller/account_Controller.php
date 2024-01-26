@@ -193,6 +193,10 @@ if (isset($_GET['act'])) {
             $maTL = $_GET['value'];
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value=$maTL");
             break;
+        case 'vechungtoi':
+            $_SESSION['slide_client'] = 2;
+            header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
+            break;
         case 'trangchu':
             $_SESSION['slide_admin'] = 0;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
