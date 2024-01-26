@@ -245,6 +245,9 @@ if (isset($_GET['act'])) {
             break;
         case 'deleteTaiKhoan':
             $maTK = $_GET['maTK'];
+            Delete('tblxulyvipham','maTheTV',('TTV'.$maTK));
+            Delete('tblqlmuontra','maTheTV',('TTV'.$maTK));
+            Delete('tblthethuvien','taiKhoan',$maTK);
             Delete('tbltaikhoan','taiKhoan',$maTK);
             $_SESSION['slide_admin'] = 9;
             header("location: http://localhost/Web_QLTHUVIEN/index.php?value");

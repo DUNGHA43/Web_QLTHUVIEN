@@ -49,6 +49,7 @@ include '../Model/CRUD_Model.php';
         switch ($_GET['act']) {
             case 'deletettv':
                 $smTVV = $_GET['maTTV'];
+                Delete('tblxulyvipham','maTheTV',$smTVV);
                 Delete('tblqlmuontra','maTheTV',$smTVV);
                 Delete('tblthethuvien','maTheTV',$smTVV);
                 $_SESSION['slide_admin'] = 11;

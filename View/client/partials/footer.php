@@ -71,7 +71,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-3">
-        Đại học Công nghệ Đông Á
+        THƯ VIỆN TRƯỜNG ĐẠI HỌC DUNGHIEUHOANG
     </div>
     <!-- Copyright -->
   </footer>
