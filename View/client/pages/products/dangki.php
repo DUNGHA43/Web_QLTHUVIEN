@@ -16,18 +16,22 @@
                     <div class="form-group">
                         <label for="fullname">Họ và tên</label>
                         <input type="text" name="fullname" class="form-control" id="fullname">
+                        <span class="form-message invalid"></span>
                     </div>
                     <div class="form-group">
                         <label for="username">Tên đăng nhập</label>
                         <input type="text" name="username" class="form-control" id="username">
+                        <span class="form-message invalid"></span>
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
                         <input type="password" name="password" class="form-control" id="password">
+                        <span class="form-message invalid"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" name="email" class="form-control" id="email">
+                        <span class="form-message invalid"></span>
                     </div>
                     <div class="form-group">
                         <label for="">Giới tính</label>
@@ -45,11 +49,35 @@
                     <div class="form-group">
                         <label for="address">Địa chỉ</label>
                         <input type="text" name="address" class="form-control" id="address">
+                        <span class="form-message invalid"></span>
                     </div>
                     <input type="submit" class="btn btn-primary btn-block mt-4" name="btn-reg" value="Đăng ký">
                 </form>
             </div>
         </div>
     </div>
+
+<script src="../../../../Web_QLTHUVIEN/config/validator.js"></script>
+<script>
+validator({
+    form: '#form_red',
+    errorSelector: '.form-message',
+    rules: [
+        validator.isRequired('#fullname'),
+        validator.isRequired('#username'),
+        validator.isRequired('#password'),
+        validator.minLength('#password', 6),
+        validator.maxLength('#password', 18),
+        validator.isRequired('#email'),
+        validator.isEmail('#email'),
+        validator.isRequired('#address')
+    ]
+});
+</script>
 </body>
 </html>
+<style>
+    .invalid{
+        color: red;
+    }
+</style>

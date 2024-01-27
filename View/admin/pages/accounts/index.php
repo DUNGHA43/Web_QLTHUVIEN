@@ -122,7 +122,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                 <h1 class="modal-title">Thêm tài khoản</h1>
             </div>
             <div class="modal-body">
-                <form role="form" method="POST" enctype="multipart/form-data" action="account_Controller.php">
+                <form id="form-1" role="form" method="POST" enctype="multipart/form-data" action="account_Controller.php">
                     <input type="hidden" name="_token" value="">
                     <div class="form-group">
                         <label for="taikhoan" class="control-label">Tài khoản</label>
@@ -185,11 +185,11 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
                         <label class="control-label">Giới tính</label>
                         <div>
                             <div class="checkbox">
-                                <input type="radio" id="css" name="gioiTinh" value="Nam">
+                                <input type="radio" name="gioiTinh" value="Nam">
                                 <label for=" html">Nam</label>
                                 <a href=""></a>
-                                <input type="radio" id="css" name="gioiTinh" value="Nữ">
-                                <label for="css">Nữ</label>
+                                <input type="radio" name="gioiTinh" value="Nữ">
+                                <label for="">Nữ</label>
                             </div>
                         </div>
                     </div>
@@ -250,7 +250,7 @@ include "../Web_QLTHUVIEN/Model/CRUD_Model.php";
 <script src="../../../../Web_QLTHUVIEN/config/validator.js"></script>
 <script>
 validator({
-  form: '#form1',
+  form: '#form-1',
   errorSelector: '.form-message',
   rules: [
     validator.isRequired('#taikhoan'),
