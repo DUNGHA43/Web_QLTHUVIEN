@@ -73,6 +73,7 @@ include "../Model/CRUD_Model.php";
         switch ($_GET['act']) {
             case 'deleteDCM':
                 $smDCM = $_GET['maDCM'];
+                Delete('tblqlmuontra', 'maTaiLieu', $smDCM);
                 Delete('tbltailieu','maTaiLieu',$smDCM);
                 $_SESSION['slide_admin'] = 5;
                 header("location: http://localhost/Web_QLTHUVIEN/index.php?value");
